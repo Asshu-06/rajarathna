@@ -138,9 +138,12 @@ export default function Home() {
         maxWidth: '720px',
         margin: '0 auto',
         padding: '80px 24px 60px',
+        background: 'rgba(10,2,8,0.55)',
+        borderRadius: '24px',
+        backdropFilter: 'blur(2px)',
       }}>
         <motion.p
-          style={{ color: '#d4af37', fontFamily: 'Lato,sans-serif', fontSize: '11px', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '16px' }}
+          style={{ color: '#f0d060', fontFamily: 'Lato,sans-serif', fontSize: '11px', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '16px', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}
           initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
         >
           Wedding Invitation
@@ -151,20 +154,20 @@ export default function Home() {
         />
 
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }}>
-          <h1 className="font-playfair" style={{ color: '#fdf8ee', fontSize: 'clamp(2rem, 6vw, 4.5rem)', lineHeight: 1.15, marginBottom: '4px' }}>
+          <h1 className="font-playfair" style={{ color: '#fff8f0', fontSize: 'clamp(2rem, 6vw, 4.5rem)', lineHeight: 1.15, marginBottom: '4px', textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>
             A. Selvaraja
           </h1>
         </motion.div>
 
         <motion.p className="font-playfair"
-          style={{ color: '#d4af37', fontSize: 'clamp(1.8rem, 4vw, 3rem)', margin: '8px 0' }}
+          style={{ color: '#f0d060', fontSize: 'clamp(1.8rem, 4vw, 3rem)', margin: '8px 0', textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}
           initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.8 }}
         >
           &amp;
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.9 }}>
-          <h1 className="font-playfair" style={{ color: '#fdf8ee', fontSize: 'clamp(2rem, 6vw, 4.5rem)', lineHeight: 1.15, marginBottom: '4px' }}>
+          <h1 className="font-playfair" style={{ color: '#fff8f0', fontSize: 'clamp(2rem, 6vw, 4.5rem)', lineHeight: 1.15, marginBottom: '4px', textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>
             R. Rathna
           </h1>
         </motion.div>
@@ -174,14 +177,14 @@ export default function Home() {
         />
 
         <motion.p className="font-cormorant"
-          style={{ color: '#e8d5b0', fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', fontStyle: 'italic', marginBottom: '12px' }}
+          style={{ color: '#f0e0c0', fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', fontStyle: 'italic', marginBottom: '12px', textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.2 }}
         >
           "Where Coimbatore's ambition meets Kumbakonam's grace"
         </motion.p>
 
         <motion.p
-          style={{ color: '#c4a882', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(0.8rem, 1.8vw, 1rem)', letterSpacing: '0.05em' }}
+          style={{ color: '#e0c8a0', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(0.8rem, 1.8vw, 1rem)', letterSpacing: '0.05em', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.4 }}
         >
           Mr. &amp; Mrs. Family request your gracious presence
@@ -191,8 +194,8 @@ export default function Home() {
         <motion.div style={{ marginTop: '48px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.8 }}
         >
-          <p style={{ color: '#d4af37', fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>Scroll</p>
-          <motion.div style={{ width: '1px', height: '40px', background: 'linear-gradient(to bottom, #d4af37, transparent)' }}
+          <p style={{ color: '#f0d060', fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>Scroll</p>
+          <motion.div style={{ width: '1px', height: '40px', background: 'linear-gradient(to bottom, #f0d060, transparent)' }}
             animate={{ scaleY: [1, 0.4, 1] }} transition={{ duration: 1.5, repeat: Infinity }}
           />
         </motion.div>
