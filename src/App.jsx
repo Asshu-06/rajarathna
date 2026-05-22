@@ -18,6 +18,7 @@ import fixedbgone from './assets/fixedbgone.jpeg'
 import fixedbgtwo from './assets/fixedbgtwo.jpeg'
 import fixedbgthree from './assets/fixedbgthree.jpeg'
 import fixedbgfour from './assets/fixedbgfour.jpeg'
+import lastbg from './assets/last.PNG'
 
 function MainApp() {
   // stage: 'gate' | 'splash' | 'main'
@@ -71,7 +72,7 @@ function MainApp() {
   }, [])
 
   return (
-    <div style={{ width: '100%', minHeight: '100vh', background: '#120008', position: 'relative', overflowX: 'hidden' }}>
+    <div style={{ width: '100%', minHeight: '100vh', background: '#1a0510', position: 'relative', overflowX: 'hidden' }}>
       <Particles />
 
       {/* ── GATE: Open Invitation screen ── */}
@@ -179,9 +180,9 @@ function MainApp() {
           <motion.div
             key="main"
             style={{ width: '100%' }}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0 }}
           >
             <Home />
             <ParallaxDivider image={fixedbgone} height="420px" topColor="#1a0510" bottomColor="#1a0510">
@@ -225,7 +226,7 @@ function MainApp() {
             </ParallaxDivider>
 
             <RelativesInvite />
-            <ParallaxDivider image={fixedbgtwo} height="380px" topColor="#1a0510" bottomColor="#120008">
+            <ParallaxDivider image={lastbg} height="380px">
               <div style={{ textAlign: 'center' }}>
                 <svg viewBox="0 0 24 24" width="32" height="32" fill="#d4af37" style={{ opacity: 0.85 }}>
                   <path d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5Z"/>

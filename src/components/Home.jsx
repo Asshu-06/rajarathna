@@ -1,84 +1,61 @@
-import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import heroBg from '../assets/herobg.jpeg'
 
-// CSS grid tile reveal — each tile scales in from 0 with shuffled stagger
-const COLS = 14
-const ROWS = 9
-const TOTAL = COLS * ROWS
-
-function GridRevealBg({ src }) {
-  // Build a shuffled delay map once — stable across renders
-  const delays = useMemo(() => {
-    const order = Array.from({ length: TOTAL }, (_, i) => i)
-    // Fisher-Yates shuffle
-    for (let i = order.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [order[i], order[j]] = [order[j], order[i]]
-    }
-    // Map tile index → delay in seconds
-    const map = new Array(TOTAL)
-    order.forEach((tileIdx, rank) => {
-      map[tileIdx] = rank * 0.018 // ~2.3 s total spread
-    })
-    return map
-  }, [])
-
+// Petal shapes: 0=classic, 1=round, 2=elongated, 3=diamond
+function PetalShape({ shape, color, size }) {
+  if (shape === 1) {
+    return (
+      <div style={{
+        width: `${size}px`, height: `${size}px`,
+        borderRadius: '50%',
+        background: color,
+      }} />
+    )
+  }
+  if (shape === 2) {
+    return (
+      <div style={{
+        width: `${size * 0.6}px`, height: `${size * 2}px`,
+        borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+        background: color,
+      }} />
+    )
+  }
+  if (shape === 3) {
+    return (
+      <div style={{
+        width: `${size}px`, height: `${size}px`,
+        borderRadius: '0 50% 0 50%',
+        background: color,
+        transform: 'rotate(45deg)',
+      }} />
+    )
+  }
+  // default: classic petal
   return (
-    <div
-      style={{
-        position: 'absolute', inset: 0,
-        display: 'grid',
-        gridTemplateColumns: `repeat(${COLS}, 1fr)`,
-        gridTemplateRows: `repeat(${ROWS}, 1fr)`,
-        zIndex: 0,
-        overflow: 'hidden',
-      }}
-    >
-      {Array.from({ length: TOTAL }, (_, i) => {
-        const col = i % COLS
-        const row = Math.floor(i / COLS)
-        return (
-          <motion.div
-            key={i}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              delay: delays[i],
-              duration: 0.35,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            style={{
-              backgroundImage: `url(${src})`,
-              backgroundSize: `${COLS * 100}% ${ROWS * 100}%`,
-              backgroundPosition: `${(col / (COLS - 1)) * 100}% ${(row / (ROWS - 1)) * 100}%`,
-              backgroundRepeat: 'no-repeat',
-              willChange: 'transform, opacity',
-            }}
-          />
-        )
-      })}
-    </div>
+    <div style={{
+      width: `${size}px`, height: `${size * 1.5}px`,
+      borderRadius: '50% 0 50% 0',
+      background: color,
+    }} />
   )
 }
 
-// Continuously falling petal for hero
-function FallingPetal({ x, delay, duration, size, color, drift }) {
+function FallingFlower({ x, delay, duration, size, color, drift, shape, spin }) {
   return (
     <motion.div
       style={{
-        position: 'absolute', top: '-20px', left: `${x}%`,
-        width: `${size}px`, height: `${size * 1.4}px`,
-        borderRadius: '50% 0 50% 0',
-        background: color,
+        position: 'absolute',
+        top: '-30px',
+        left: `${x}%`,
         pointerEvents: 'none',
-        zIndex: 2,
+        zIndex: 3,
       }}
       animate={{
-        y: ['0vh', '110vh'],
-        rotate: [0, 360 + Math.random() * 360],
-        x: [0, drift, -drift * 0.6, drift * 0.3, 0],
-        opacity: [0, 0.7, 0.7, 0],
+        y: ['0vh', '115vh'],
+        rotate: [0, spin],
+        x: [0, drift, -drift * 0.5, drift * 0.4, 0],
+        opacity: [0, 0.85, 0.85, 0.85, 0],
       }}
       transition={{
         duration,
@@ -86,27 +63,37 @@ function FallingPetal({ x, delay, duration, size, color, drift }) {
         repeat: Infinity,
         ease: 'linear',
         repeatDelay: 0,
+        times: [0, 0.1, 0.5, 0.9, 1],
       }}
-    />
+    >
+      <PetalShape shape={shape} color={color} size={size} />
+    </motion.div>
   )
 }
 
-const HERO_PETAL_COLORS = [
-  'rgba(255,215,100,0.6)',
-  'rgba(255,180,150,0.5)',
-  'rgba(255,200,200,0.55)',
-  'rgba(212,175,55,0.5)',
-  'rgba(255,160,180,0.5)',
+const PETAL_COLORS = [
+  'rgba(255,182,193,0.75)',   // light pink
+  'rgba(255,105,135,0.6)',    // rose
+  'rgba(255,215,100,0.65)',   // golden yellow
+  'rgba(212,175,55,0.6)',     // gold
+  'rgba(255,200,220,0.7)',    // blush
+  'rgba(255,160,180,0.65)',   // deep pink
+  'rgba(255,230,150,0.6)',    // pale gold
+  'rgba(220,120,150,0.55)',   // mauve
+  'rgba(255,240,200,0.7)',    // cream
+  'rgba(255,140,160,0.6)',    // salmon pink
 ]
 
-const HERO_PETALS = Array.from({ length: 25 }, (_, i) => ({
+const FLOWERS = Array.from({ length: 55 }, (_, i) => ({
   id: i,
-  x: Math.random() * 100,
-  delay: Math.random() * 8,
-  duration: 5 + Math.random() * 5,
-  size: 7 + Math.random() * 8,
-  color: HERO_PETAL_COLORS[i % HERO_PETAL_COLORS.length],
-  drift: 15 + Math.random() * 35,
+  x: Math.random() * 105,
+  delay: Math.random() * 12,
+  duration: 6 + Math.random() * 7,
+  size: 6 + Math.random() * 10,
+  color: PETAL_COLORS[i % PETAL_COLORS.length],
+  drift: 20 + Math.random() * 50,
+  shape: Math.floor(Math.random() * 4),
+  spin: 180 + Math.random() * 540,
 }))
 
 export default function Home() {
@@ -118,19 +105,25 @@ export default function Home() {
         width: '100%',
         minHeight: '100vh',
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-end',
         justifyContent: 'center',
         overflow: 'hidden',
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center 20%',
+        backgroundRepeat: 'no-repeat',
+        zIndex: 2,
       }}
     >
-      {/* Grid reveal background */}
-      <GridRevealBg src={heroBg} />
+      {/* Dark overlay — stronger at bottom so text pops */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(to bottom, rgba(10,2,8,0.25) 0%, rgba(10,2,8,0.3) 50%, rgba(10,2,8,0.75) 75%, rgba(10,2,8,0.92) 100%)',
+        zIndex: 1, pointerEvents: 'none',
+      }} />
 
-      {/* Dark overlay to dim the image so text pops */}
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,2,8,0.52)', zIndex: 1, pointerEvents: 'none' }} />
-
-      {/* Continuously falling petals */}
-      {HERO_PETALS.map(p => <FallingPetal key={p.id} {...p} />)}
+      {/* Continuously falling flowers */}
+      {FLOWERS.map(f => <FallingFlower key={f.id} {...f} />)}
 
       {/* Content */}
       <div style={{
@@ -139,7 +132,7 @@ export default function Home() {
         width: '100%',
         maxWidth: '720px',
         margin: '0 auto',
-        padding: '80px 24px 60px',
+        padding: '0 24px 60px',
       }}>
         <motion.p
           style={{ color: '#f0d060', fontFamily: 'Lato,sans-serif', fontSize: '11px', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '16px', textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}
@@ -198,13 +191,6 @@ export default function Home() {
             animate={{ scaleY: [1, 0.4, 1] }} transition={{ duration: 1.5, repeat: Infinity }}
           />
         </motion.div>
-      </div>
-      {/* Bottom wave — covers tile grid bottom edge, flows into next section */}
-      <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', overflow: 'hidden', lineHeight: 0, zIndex: 4 }}>
-        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-          style={{ display: 'block', width: '100%', height: '120px' }}>
-          <path d="M0,60 C180,0 360,120 540,60 C720,0 900,120 1080,60 C1260,0 1380,80 1440,60 L1440,120 L0,120 Z" fill="#1a0510"/>
-        </svg>
       </div>
     </section>
   )

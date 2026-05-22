@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ringBg from '../assets/ringvk.jpeg'
-import WaveDivider from './WaveDivider'
+
 
 const FULL_TEXT = `Coimbatore, May 2026
 
@@ -176,14 +176,14 @@ export default function LoveLetter() {
     <section
       ref={sectionRef}
       style={{
-        position:'relative', zIndex:1, width:'100%',
+        position:'relative', zIndex:2, width:'100%',
         padding:'clamp(64px,10vw,120px) 0',
         background:'linear-gradient(160deg,#1a0510 0%,#2d0a1e 50%,#1a0510 100%)',
         overflow:'hidden',
       }}
     >
       <div className="section-line" />
-      <WaveDivider fill="#1a0510" />
+
       <div style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 65% 55% at 50% 40%,rgba(212,175,55,0.1) 0%,transparent 70%)' }} />
 
       <div style={{ position:'relative', zIndex:2, width:'100%', maxWidth:'640px', margin:'0 auto', padding:'0 clamp(16px,5vw,40px)' }}>

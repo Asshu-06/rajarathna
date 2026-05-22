@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
-import WaveDivider from './WaveDivider'
+
 
 const TARGET = new Date('2026-05-29T08:30:00')
 
@@ -72,14 +72,14 @@ export default function Countdown() {
       className={`section-highlight${inView ? ' in-view' : ''}`}
       style={{
         position: 'relative',
-        zIndex: 1,
+        zIndex: 2,
         width: '100%',
         padding: 'clamp(64px,10vw,120px) 0',
         background: 'linear-gradient(180deg,#1a0510 0%,#2d0a1e 100%)',
       }}
     >
       <div className="section-line" />
-      <WaveDivider fill="#1a0510" />
+
       {inView && (
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(212,175,55,0.1) 0%, transparent 70%)' }} />
       )}

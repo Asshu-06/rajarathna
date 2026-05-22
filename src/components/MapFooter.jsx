@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
-import WaveDivider from './WaveDivider'
+
 
 export default function MapFooter() {
   const [ref, inView] = useHighlight(0.08)
@@ -16,10 +16,10 @@ export default function MapFooter() {
     <footer
       ref={ref}
       className={`section-highlight${inView ? ' in-view' : ''}${inView ? ' section-glow' : ''}`}
-      style={{ position: 'relative', zIndex: 1, width: '100%', background: 'linear-gradient(180deg,#120008 0%,#2d0a1e 100%)' }}
+      style={{ position: 'relative', zIndex: 2, width: '100%', background: 'linear-gradient(180deg,#120008 0%,#2d0a1e 100%)' }}
     >
       <div className="section-line" />
-      <WaveDivider fill="#120008" />
+
 
       {inView && (
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 70% 40% at 50% 0%, rgba(212,175,55,0.09) 0%, transparent 65%)' }} />
@@ -106,6 +106,22 @@ export default function MapFooter() {
             29 May 2026 · Bellezza Event Hall, Coimbatore
           </p>
         </motion.div>
+
+        {/* Credit */}
+        <div style={{ textAlign: 'center', marginTop: '32px', paddingBottom: '24px' }}>
+          <p style={{ color: '#c8a0b0', fontFamily: 'Lato,sans-serif', fontSize: '11px', letterSpacing: '0.18em' }}>
+            Digital Invitation © 2026 &nbsp;·&nbsp;{' '}
+            <a
+              href="https://www.instagram.com/storiesby_vk"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#d4af37', textDecoration: 'none', letterSpacing: '0.12em', fontWeight: 600 }}
+            >
+              @storiesby_vk
+            </a>
+          </p>
+        </div>
+
       </div>
     </footer>
   )
