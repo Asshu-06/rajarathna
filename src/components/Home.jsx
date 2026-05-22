@@ -1,7 +1,66 @@
-import { useRef, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import heroBg from '../assets/herobg.jpeg'
-import WaveDivider from './WaveDivider'
+
+// CSS grid tile reveal — each tile scales in from 0 with shuffled stagger
+const COLS = 14
+const ROWS = 9
+const TOTAL = COLS * ROWS
+
+function GridRevealBg({ src }) {
+  // Build a shuffled delay map once — stable across renders
+  const delays = useMemo(() => {
+    const order = Array.from({ length: TOTAL }, (_, i) => i)
+    // Fisher-Yates shuffle
+    for (let i = order.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]]
+    }
+    // Map tile index → delay in seconds
+    const map = new Array(TOTAL)
+    order.forEach((tileIdx, rank) => {
+      map[tileIdx] = rank * 0.018 // ~2.3 s total spread
+    })
+    return map
+  }, [])
+
+  return (
+    <div
+      style={{
+        position: 'absolute', inset: 0,
+        display: 'grid',
+        gridTemplateColumns: `repeat(${COLS}, 1fr)`,
+        gridTemplateRows: `repeat(${ROWS}, 1fr)`,
+        zIndex: 0,
+        overflow: 'hidden',
+      }}
+    >
+      {Array.from({ length: TOTAL }, (_, i) => {
+        const col = i % COLS
+        const row = Math.floor(i / COLS)
+        return (
+          <motion.div
+            key={i}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              delay: delays[i],
+              duration: 0.35,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            style={{
+              backgroundImage: `url(${src})`,
+              backgroundSize: `${COLS * 100}% ${ROWS * 100}%`,
+              backgroundPosition: `${(col / (COLS - 1)) * 100}% ${(row / (ROWS - 1)) * 100}%`,
+              backgroundRepeat: 'no-repeat',
+              willChange: 'transform, opacity',
+            }}
+          />
+        )
+      })}
+    </div>
+  )
+}
 
 // Continuously falling petal for hero
 function FallingPetal({ x, delay, duration, size, color, drift }) {
@@ -51,41 +110,8 @@ const HERO_PETALS = Array.from({ length: 25 }, (_, i) => ({
 }))
 
 export default function Home() {
-  const wrapRef = useRef(null)
-  const bgRef = useRef(null)
-
-  useEffect(() => {
-    const wrap = wrapRef.current
-    const bg = bgRef.current
-    if (!wrap || !bg) return
-
-    const update = () => {
-      const r = wrap.getBoundingClientRect()
-      const vw = window.innerWidth
-      const vh = window.innerHeight
-      if (r.bottom <= 0 || r.top >= vh) {
-        bg.style.clipPath = 'inset(100%)'
-        return
-      }
-      const t = Math.max(0, r.top)
-      const b = Math.max(0, vh - r.bottom)
-      const l = Math.max(0, r.left)
-      const ri = Math.max(0, vw - r.right)
-      bg.style.clipPath = `inset(${t}px ${ri}px ${b}px ${l}px)`
-    }
-
-    window.addEventListener('scroll', update, { passive: true })
-    window.addEventListener('resize', update, { passive: true })
-    update()
-    return () => {
-      window.removeEventListener('scroll', update)
-      window.removeEventListener('resize', update)
-    }
-  }, [])
-
   return (
     <section
-      ref={wrapRef}
       id="home"
       style={{
         position: 'relative',
@@ -96,19 +122,8 @@ export default function Home() {
         justifyContent: 'center',
       }}
     >
-      {/* Truly fixed background — works on iOS/Android */}
-      <div
-        ref={bgRef}
-        style={{
-          position: 'fixed',
-          top: 0, left: 0, right: 0, bottom: 0,
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex: 0,
-          pointerEvents: 'none',
-        }}
-      />
+      {/* Grid reveal background */}
+      <GridRevealBg src={heroBg} />
       {/* Dark overlay — removed */}
 
       {/* Continuously falling petals */}
