@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
-import WaveDivider from './WaveDivider' {
+import WaveDivider from './WaveDivider'
+
+export default function Invitation() {
   const [ref, inView] = useHighlight(0.08)
 
   const fadeUp = (delay = 0) => ({
