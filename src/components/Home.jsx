@@ -138,9 +138,6 @@ export default function Home() {
         maxWidth: '720px',
         margin: '0 auto',
         padding: '80px 24px 60px',
-        background: 'rgba(10,2,8,0.55)',
-        borderRadius: '24px',
-        backdropFilter: 'blur(2px)',
       }}>
         <motion.p
           style={{ color: '#f0d060', fontFamily: 'Lato,sans-serif', fontSize: '11px', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '16px', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}
