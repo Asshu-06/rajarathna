@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
+import WaveDivider from './WaveDivider'
 
 const photos = [
   { url: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=700&q=80', alt: 'Wedding flowers' },
@@ -20,6 +21,7 @@ export default function Gallery() {
       style={{ position: 'relative', width: '100%', padding: 'clamp(48px,8vw,96px) 0', background: 'linear-gradient(180deg,#1a0510 0%,#2d0a1e 100%)' }}
     >
       <div className="section-line" />
+      <WaveDivider fill="#1a0510" />
 
       {inView && (
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 70% 40% at 50% 0%, rgba(212,175,55,0.08) 0%, transparent 65%)' }} />

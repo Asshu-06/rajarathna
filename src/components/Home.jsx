@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import heroBg from '../assets/herobg.jpeg'
+import WaveDivider from './WaveDivider'
 
 // Continuously falling petal for hero
 function FallingPetal({ x, delay, duration, size, color, drift }) {
@@ -179,6 +180,13 @@ export default function Home() {
             animate={{ scaleY: [1, 0.4, 1] }} transition={{ duration: 1.5, repeat: Infinity }}
           />
         </motion.div>
+      </div>
+      {/* Bottom wave — flows into next section */}
+      <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', overflow: 'hidden', lineHeight: 0, zIndex: 3 }}>
+        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+          style={{ display: 'block', width: '100%', height: '60px' }}>
+          <path d="M0,30 C180,0 360,60 540,30 C720,0 900,60 1080,30 C1260,0 1380,40 1440,30 L1440,60 L0,60 Z" fill="#1a0510"/>
+        </svg>
       </div>
     </section>
   )

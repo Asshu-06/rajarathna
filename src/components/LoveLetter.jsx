@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
 import ringBg from '../assets/ringvk.jpeg'
+import WaveDivider from './WaveDivider'
 
 const FULL_TEXT = `Coimbatore, May 2026
 
@@ -125,6 +126,7 @@ export default function LoveLetter() {
       }}
     >
       <div className="section-line" />
+      <WaveDivider fill="#1a0a10" />
       {inView && (
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 65% 55% at 50% 40%,rgba(212,175,55,0.1) 0%,transparent 70%)' }} />
       )}

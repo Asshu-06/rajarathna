@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
+import WaveDivider from './WaveDivider'
 
 export default function RelativesInvite() {
   const [ref, inView] = useHighlight(0.08)
@@ -22,6 +23,8 @@ export default function RelativesInvite() {
       }}
     >
       <div className="section-line" />
+      <WaveDivider fill="#1a0510" />
+
       {inView && (
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 65% 55% at 50% 40%, rgba(212,175,55,0.07) 0%, transparent 70%)' }} />
       )}

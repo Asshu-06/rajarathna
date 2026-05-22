@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
+import WaveDivider from './WaveDivider'
 
 function EventCard({ title, date, time, venue, icon, accent, backContent, delay, inView }) {
   return (
@@ -58,6 +59,7 @@ export default function EventDetails() {
       style={{ position: 'relative', width: '100%', padding: 'clamp(48px,8vw,96px) 0', background: 'linear-gradient(180deg,#1a0510 0%,#2d0a1e 100%)' }}
     >
       <div className="section-line" />
+      <WaveDivider fill="#1a0510" />
       {inView && <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 70% 50% at 50% 0%,rgba(212,175,55,0.09) 0%,transparent 70%)' }} />}
 
       <div style={{ width: '100%', maxWidth: '960px', margin: '0 auto', padding: '0 clamp(16px,5vw,40px)' }}>

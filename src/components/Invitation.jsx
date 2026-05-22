@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
-
-export default function Invitation() {
+import WaveDivider from './WaveDivider' {
   const [ref, inView] = useHighlight(0.08)
 
   const fadeUp = (delay = 0) => ({
@@ -22,6 +21,7 @@ export default function Invitation() {
       }}
     >
       <div className="section-line" />
+      <WaveDivider fill="#1a0510" />
       {inView && (
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(212,175,55,0.09) 0%, transparent 70%)' }} />
       )}
