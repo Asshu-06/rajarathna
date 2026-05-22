@@ -3,21 +3,24 @@ import { motion, AnimatePresence } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
 import ringBg from '../assets/ringvk.jpeg'
 
-const FULL_TEXT = `Wedding Invitation Text
+const FULL_TEXT = `Coimbatore, May 2026
 
-Mr. & Mrs. Family cordially invite you to celebrate the auspicious wedding ceremony of
+Dear Selvaraja & Rathna,
 
-✨ A. Selvaraja with ✨ R. Rathna
+From the moment two families sat across from each other with hope in their eyes, something quietly beautiful began. Not with grand gestures or dramatic declarations — but with small conversations, shared silences, and the slow, steady warmth of two people discovering they were meant to walk the same path.
 
-🌼 Haldi Ceremony
-📅 28th May 2026 🕓 4:00 PM – 9:00 PM
+Selvaraja — a man of quiet strength, steady purpose, and a heart that loves deeply without needing to say it loudly.
 
-💍 Muhurtham / Marriage
-📅 29th May 2026 🕣 8:30 AM – 9:30 AM
+Rathna — a woman of grace, warmth, and the kind of gentle courage that makes everyone around her feel safe and seen.
 
-📍 Venue: Bellezza Event Hall, Coimbatore
+Together, they are not just a couple. They are a promise — that love can be both chosen and destined, both practical and poetic, both rooted in tradition and open to the future.
 
-"With the blessings of family and friends, we request your gracious presence to make this occasion more memorable."`
+As you begin this new chapter, may your home always be filled with laughter, your hearts always be full of gratitude, and your love always be the kind that grows stronger with every passing year.
+
+We are so proud of you both.
+
+With all our love and blessings,
+Your Family 🌸`
 
 function Cursor() {
   return (
@@ -118,7 +121,7 @@ export default function LoveLetter() {
         position: 'relative',
         width: '100%',
         padding: 'clamp(64px,10vw,120px) 0',
-        background: 'linear-gradient(160deg,#fdf8ee 0%,#f5ead6 50%,#faf8f3 100%)',
+        background: 'linear-gradient(160deg,#1a0a0f 0%,#2d0f1a 50%,#1f0a12 100%)',
       }}
     >
       <div className="section-line" />
@@ -142,14 +145,14 @@ export default function LoveLetter() {
             </svg>
             <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg,#d4af37,transparent)' }} />
           </div>
-          <p style={{ color: '#b8860b', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '10px' }}>
+          <p style={{ color: '#e8a0b0', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '10px' }}>
             A Letter from the Heart
           </p>
-          <h2 className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.8rem,5vw,2.8rem)', marginBottom: '10px' }}>
-            Two Cities, One Love
+          <h2 className="font-playfair" style={{ color: '#fdf0f4', fontSize: 'clamp(1.8rem,5vw,2.8rem)', marginBottom: '10px' }}>
+            Our Story, Our Promise
           </h2>
           <motion.p
-            style={{ color: '#8b6914', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(10px,1.8vw,12px)', letterSpacing: '0.12em' }}
+            style={{ color: '#d4af37', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(10px,1.8vw,12px)', letterSpacing: '0.12em' }}
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
           >

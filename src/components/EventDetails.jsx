@@ -138,7 +138,7 @@ export default function EventDetails() {
     <section
       ref={ref}
       className={`section-highlight${inView ? ' in-view' : ''}`}
-      style={{ position: 'relative', width: '100%', padding: 'clamp(48px,8vw,96px) 0', background: 'linear-gradient(180deg,#faf8f3 0%,#f0e8d5 100%)' }}
+      style={{ position: 'relative', width: '100%', padding: 'clamp(48px,8vw,96px) 0', background: 'linear-gradient(180deg,#1a0a2e 0%,#2a1050 100%)' }}
     >
       <div className="section-line" />
       {inView && <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 70% 50% at 50% 0%,rgba(212,175,55,0.09) 0%,transparent 70%)' }} />}
@@ -149,14 +149,14 @@ export default function EventDetails() {
           style={{ textAlign: 'center', marginBottom: 'clamp(32px,5vw,56px)' }}
           initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}
         >
-          <p style={{ color: '#b8860b', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '12px' }}>
+          <p style={{ color: '#b8a0e8', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '12px' }}>
             Save the Date
           </p>
-          <h2 className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.8rem,5vw,3rem)', marginBottom: '16px' }}>
+          <h2 className="font-playfair" style={{ color: '#e8e0ff', fontSize: 'clamp(1.8rem,5vw,3rem)', marginBottom: '16px' }}>
             Event Details
           </h2>
           <div className="gold-divider" />
-          <p style={{ color: '#8b6914', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(10px,1.8vw,12px)', marginTop: '12px', letterSpacing: '0.08em' }}>
+          <p style={{ color: '#a890d8', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(10px,1.8vw,12px)', marginTop: '12px', letterSpacing: '0.08em' }}>
             Tap each card to discover more
           </p>
         </motion.div>

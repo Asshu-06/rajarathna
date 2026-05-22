@@ -47,7 +47,7 @@ function TimeBox({ value, label, inView, delay }) {
         fontSize: 'clamp(9px,1.5vw,12px)',
         letterSpacing: '0.2em',
         textTransform: 'uppercase',
-        color: '#8b6914',
+        color: '#7eb8e8',
         fontFamily: 'Lato, sans-serif',
       }}>
         {label}
@@ -73,7 +73,7 @@ export default function Countdown() {
         position: 'relative',
         width: '100%',
         padding: 'clamp(64px,10vw,120px) 0',
-        background: 'linear-gradient(180deg,#faf8f3 0%,#f5ead6 100%)',
+        background: 'linear-gradient(180deg,#0f1a2e 0%,#1a2d4a 100%)',
       }}
     >
       <div className="section-line" />
@@ -89,13 +89,13 @@ export default function Countdown() {
                 stroke="#d4af37" strokeWidth="1.5" fill="none" opacity="0.7"/>
             </svg>
           </div>
-          <p style={{ color: '#b8860b', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '12px' }}>
+          <p style={{ color: '#7eb8e8', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '12px' }}>
             Counting down to our special day
           </p>
-          <h2 className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.8rem,5vw,3rem)', marginBottom: '8px' }}>
+          <h2 className="font-playfair" style={{ color: '#e8f0ff', fontSize: 'clamp(1.8rem,5vw,3rem)', marginBottom: '8px' }}>
             29 May 2026
           </h2>
-          <p className="font-cormorant" style={{ color: '#8b6914', fontSize: 'clamp(1rem,2.5vw,1.4rem)', fontStyle: 'italic', marginBottom: 'clamp(28px,5vw,48px)' }}>
+          <p className="font-cormorant" style={{ color: '#a8c8e8', fontSize: 'clamp(1rem,2.5vw,1.4rem)', fontStyle: 'italic', marginBottom: 'clamp(28px,5vw,48px)' }}>
             8:30 AM — Bellezza Event Hall, Coimbatore
           </p>
         </motion.div>

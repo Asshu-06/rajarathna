@@ -18,7 +18,7 @@ export default function RelativesInvite() {
         position: 'relative',
         width: '100%',
         padding: 'clamp(64px,10vw,120px) 0',
-        background: 'linear-gradient(160deg, #f0e8d5 0%, #faf8f3 60%, #f5ead6 100%)',
+        background: 'linear-gradient(160deg, #0a1f1a 0%, #0f2d24 60%, #0a1f1a 100%)',
       }}
     >
       <div className="section-line" />
@@ -37,11 +37,11 @@ export default function RelativesInvite() {
             </svg>
             <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg,#8b1a2f,transparent)' }} />
           </div>
-          <p style={{ color: '#8b1a2f', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '12px' }}>
+          <p style={{ color: '#7ecfb0', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '12px' }}>
             You Are Our World
           </p>
-          <h2 className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.8rem,5vw,2.8rem)' }}>
-            A Heartfelt Call to Our Beloved Family &amp; Friends
+          <h2 className="font-playfair" style={{ color: '#e8f5f0', fontSize: 'clamp(1.8rem,5vw,2.8rem)' }}>
+            From Kumbakonam to Coimbatore — One Beautiful Story
           </h2>
         </motion.div>
 
@@ -51,84 +51,90 @@ export default function RelativesInvite() {
           style={{
             borderRadius: '20px',
             padding: 'clamp(28px,5vw,56px) clamp(24px,5vw,56px)',
-            background: 'rgba(255,255,255,0.7)',
-            border: '1px solid rgba(139,26,47,0.15)',
-            boxShadow: '0 16px 60px rgba(139,26,47,0.08)',
+            background: 'rgba(255,255,255,0.07)',
+            border: '1px solid rgba(126,207,176,0.25)',
+            boxShadow: '0 16px 60px rgba(0,0,0,0.3)',
             backdropFilter: 'blur(14px)',
             textAlign: 'center',
           }}
         >
-          <motion.p className="font-cormorant" {...fadeUp(0.26)}
-            style={{ color: '#4a2c1a', fontSize: 'clamp(1.1rem,2.8vw,1.45rem)', lineHeight: 1.9, marginBottom: '24px', fontStyle: 'italic' }}>
-            Dear Amma, Appa, Thatha, Paati, Chitthi, Periappa, Maama, Maami,
-            Akka, Anna, Thambi, Thangachi — and every precious soul who has
-            ever called us family...
+          <motion.p className="font-cormorant" {...fadeUp(0.22)}
+            style={{ color: '#c8ede0', fontSize: 'clamp(1rem,2.5vw,1.35rem)', lineHeight: 1.9, marginBottom: '20px', fontStyle: 'italic' }}>
+            From the sacred temple streets of Kumbakonam, where every dawn begins with prayer bells and tradition flows like the Cauvery… To the vibrant city of Coimbatore, where dreams rise alongside skylines and hard work builds tomorrow… Two different worlds were destined to meet.
           </motion.p>
 
-          <motion.p className="font-cormorant" {...fadeUp(0.33)}
-            style={{ color: '#5a3a1a', fontSize: 'clamp(1.05rem,2.5vw,1.35rem)', lineHeight: 1.85, marginBottom: '20px' }}>
-            You have been the roots that kept us grounded, the wings that taught us to fly, and the warmth that made every house a home. Every milestone in our lives has been made sweeter because you were there — cheering, praying, and loving us unconditionally.
+          <motion.p className="font-cormorant" {...fadeUp(0.28)}
+            style={{ color: '#a8d8c8', fontSize: 'clamp(1rem,2.5vw,1.3rem)', lineHeight: 1.85, marginBottom: '20px' }}>
+            One heart grew among culture, devotion, and timeless traditions. Another heart grew amidst ambition, engineering, construction, and the spirit of creating something lasting for the future. And somewhere between these two beautiful journeys, destiny quietly began writing a story called <strong style={{ color: '#7ecfb0' }}>"Selvaraja &amp; Rathna."</strong>
           </motion.p>
 
-          <motion.p className="font-cormorant" {...fadeUp(0.4)}
-            style={{ color: '#5a3a1a', fontSize: 'clamp(1.05rem,2.5vw,1.35rem)', lineHeight: 1.85, marginBottom: '20px' }}>
-            What began as a meeting arranged by two families who trusted each other became something neither of us expected — a quiet understanding, a growing warmth, and a love that felt both new and familiar at the same time. They say arranged marriages are chosen by the family, but what grew between Selvaraja and Rathna was chosen by the heart.
+          <motion.p className="font-cormorant" {...fadeUp(0.34)}
+            style={{ color: '#c8ede0', fontSize: 'clamp(1rem,2.5vw,1.35rem)', lineHeight: 1.9, marginBottom: '20px', fontStyle: 'italic' }}>
+            Dear Amma, Appa, Thatha, Paati, Chitthi, Periappa, Maama, Maami, Akka, Anna, Thambi, Thangachi — and every soul who has walked beside us through life…
           </motion.p>
 
-          <motion.p className="font-cormorant" {...fadeUp(0.47)}
-            style={{ color: '#5a3a1a', fontSize: 'clamp(1.05rem,2.5vw,1.35rem)', lineHeight: 1.85, marginBottom: '32px' }}>
-            Now, as we step into the most beautiful chapter of our lives, we cannot imagine beginning it without your blessings, your laughter, and your presence beside us. A celebration without you would be like a garland without flowers — incomplete. Please come. Not just as guests — but as the heartbeat of this celebration. Your smile is our decoration, your blessing is our auspiciousness, and your love is the greatest gift you could ever give us on this day.
+          <motion.p className="font-cormorant" {...fadeUp(0.39)}
+            style={{ color: '#a8d8c8', fontSize: 'clamp(1rem,2.5vw,1.3rem)', lineHeight: 1.85, marginBottom: '20px' }}>
+            You are not merely relatives to us. You are our first teachers, our loudest supporters, our safe place in every storm, and the reason our happiest memories feel complete. Every blessing you whispered for us… Every sacrifice you silently made… Every prayer you offered with love… Has led us to this beautiful moment.
           </motion.p>
 
-          {/* Highlighted invite box */}
+          <motion.p className="font-cormorant" {...fadeUp(0.44)}
+            style={{ color: '#a8d8c8', fontSize: 'clamp(1rem,2.5vw,1.3rem)', lineHeight: 1.85, marginBottom: '20px' }}>
+            Some stories begin with grand love. Ours began with trust. A trust between two families. A meeting arranged with care. A conversation that slowly turned into comfort. A bond that quietly became friendship. And before we realized it, two hearts from two different cities had found a home within each other.
+          </motion.p>
+
+          <motion.p className="font-cormorant" {...fadeUp(0.49)}
+            style={{ color: '#a8d8c8', fontSize: 'clamp(1rem,2.5vw,1.3rem)', lineHeight: 1.85, marginBottom: '28px' }}>
+            Like the ancient temples of Kumbakonam standing strong through time… And like the ever-growing skyline of Coimbatore built with vision and determination… Our journey too is built on faith, respect, understanding, and love.
+          </motion.p>
+
           <motion.div
             {...fadeUp(0.54)}
             style={{
               borderRadius: '16px',
               padding: 'clamp(20px,4vw,36px)',
-              background: 'linear-gradient(135deg, rgba(139,26,47,0.06), rgba(212,175,55,0.08))',
-              border: '1px solid rgba(139,26,47,0.18)',
+              background: 'linear-gradient(135deg, rgba(126,207,176,0.12), rgba(212,175,55,0.1))',
+              border: '1px solid rgba(126,207,176,0.3)',
               marginBottom: '28px',
             }}
           >
-            <p className="font-playfair" style={{ color: '#8b1a2f', fontSize: 'clamp(1.1rem,2.8vw,1.5rem)', marginBottom: '12px' }}>
-              We joyfully invite you to grace us with your presence at
+            <p className="font-playfair" style={{ color: '#7ecfb0', fontSize: 'clamp(1.1rem,2.8vw,1.5rem)', marginBottom: '16px' }}>
+              ✨ The Wedding of ✨
             </p>
-            <p className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.3rem,3.5vw,2rem)', fontWeight: 600, marginBottom: '8px' }}>
-              The Wedding of
-            </p>
-            <p className="font-playfair" style={{ color: '#8b1a2f', fontSize: 'clamp(1.2rem,3vw,1.8rem)', marginBottom: '4px' }}>
+            <p className="font-playfair" style={{ color: '#e8f5f0', fontSize: 'clamp(1.2rem,3vw,1.8rem)', marginBottom: '4px' }}>
               A. Selvaraja
             </p>
-            <p className="font-playfair" style={{ color: '#d4af37', fontSize: 'clamp(1.3rem,3vw,1.8rem)', margin: '6px 0' }}>&amp;</p>
-            <p className="font-playfair" style={{ color: '#8b1a2f', fontSize: 'clamp(1.2rem,3vw,1.8rem)', marginBottom: '20px' }}>
+            <p className="font-cormorant" style={{ color: '#7ecfb0', fontSize: 'clamp(0.9rem,2vw,1.1rem)', fontStyle: 'italic', marginBottom: '8px' }}>
+              Engineer • Construction &amp; Real Estate
+            </p>
+            <p className="font-playfair" style={{ color: '#d4af37', fontSize: 'clamp(1.3rem,3vw,1.8rem)', margin: '6px 0' }}>with</p>
+            <p className="font-playfair" style={{ color: '#e8f5f0', fontSize: 'clamp(1.2rem,3vw,1.8rem)', marginBottom: '4px' }}>
               R. Rathna
             </p>
-            <p className="font-cormorant" style={{ color: '#5a3a1a', fontSize: 'clamp(1rem,2.5vw,1.3rem)', lineHeight: 1.7, fontStyle: 'italic' }}>
-              🌼 Haldi: 28 May 2026, 4:00 PM – 9:00 PM<br/>
-              💍 Muhurtham: 29 May 2026, 8:30 AM – 9:30 AM<br/>
+            <p className="font-cormorant" style={{ color: '#7ecfb0', fontSize: 'clamp(0.9rem,2vw,1.1rem)', fontStyle: 'italic', marginBottom: '20px' }}>
+              The graceful daughter of the Temple City, Kumbakonam
+            </p>
+            <p className="font-cormorant" style={{ color: '#a8d8c8', fontSize: 'clamp(1rem,2.5vw,1.2rem)', lineHeight: 1.8 }}>
+              🌼 Haldi Ceremony — 28 May 2026 | 4:00 PM – 9:00 PM<br/>
+              💍 Muhurtham — 29 May 2026 | 8:30 AM – 9:30 AM<br/>
               📍 Bellezza Event Hall, Coimbatore
             </p>
           </motion.div>
 
           <motion.p className="font-cormorant" {...fadeUp(0.62)}
-            style={{ color: '#4a2c1a', fontSize: 'clamp(1.1rem,2.8vw,1.45rem)', lineHeight: 1.85, fontStyle: 'italic', marginBottom: '24px' }}>
-            Come, eat with us, dance with us, cry happy tears with us.
-            Let your laughter fill the halls and your blessings fill our hearts.
-            We need you there — not just as witnesses, but as the very reason
-            this day will be unforgettable. Because it was you — your prayers,
-            your trust, your love — that brought two hearts together.
+            style={{ color: '#c8ede0', fontSize: 'clamp(1rem,2.5vw,1.35rem)', lineHeight: 1.9, fontStyle: 'italic', marginBottom: '24px' }}>
+            Come celebrate with us… Eat with us. Laugh with us. Dance with us. Bless us. Because no decoration can shine brighter than the love of family, and no wedding can feel complete without the people who hold our hearts forever.
           </motion.p>
 
-          <motion.div {...fadeUp(0.68)} style={{ borderTop: '1px solid rgba(212,175,55,0.2)', paddingTop: '24px' }}>
-            <p className="font-playfair" style={{ color: '#8b1a2f', fontSize: 'clamp(1.1rem,2.5vw,1.4rem)', fontStyle: 'italic', marginBottom: '6px' }}>
-              With folded hands and full hearts,
+          <motion.div {...fadeUp(0.68)} style={{ borderTop: '1px solid rgba(126,207,176,0.2)', paddingTop: '24px' }}>
+            <p className="font-playfair" style={{ color: '#7ecfb0', fontSize: 'clamp(1.1rem,2.5vw,1.4rem)', fontStyle: 'italic', marginBottom: '6px' }}>
+              With love, gratitude, and folded hands,
             </p>
-            <p className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.2rem,3vw,1.6rem)', fontWeight: 600 }}>
-              Mr. &amp; Mrs. Family
+            <p className="font-playfair" style={{ color: '#e8f5f0', fontSize: 'clamp(1.2rem,3vw,1.6rem)', fontWeight: 600 }}>
+              Selvaraja &amp; Rathna
             </p>
-            <p className="font-cormorant" style={{ color: '#8b6914', fontSize: 'clamp(0.9rem,2vw,1.1rem)', fontStyle: 'italic', marginTop: '4px' }}>
-              &amp; the entire family
+            <p className="font-cormorant" style={{ color: '#d4af37', fontSize: 'clamp(0.9rem,2vw,1.1rem)', fontStyle: 'italic', marginTop: '4px' }}>
+              along with our beloved families
             </p>
           </motion.div>
         </motion.div>

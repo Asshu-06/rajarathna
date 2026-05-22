@@ -19,12 +19,12 @@ html::-webkit-scrollbar {
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #faf8f3;
-  color: #2d1b0e;
+  background-color: #0d0f1a;
+  color: #e8e9ff;
   overflow-x: hidden;
   width: 100%;
   min-width: 320px;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 body::-webkit-scrollbar {

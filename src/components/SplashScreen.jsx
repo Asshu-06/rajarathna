@@ -261,7 +261,7 @@ export default function SplashScreen({ onComplete }) {
             position: 'fixed', inset: 0, zIndex: 50,
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
             overflow: 'hidden',
-            background: 'radial-gradient(ellipse at center, #fdf8ee 0%, #f5ead6 55%, #ede0c4 100%)',
+            background: 'radial-gradient(ellipse at center, #1a0a2e 0%, #2d1060 55%, #1a0a2e 100%)',
           }}
           exit={{ opacity: 0, scale: 1.04 }}
           transition={{ duration: 0.6 }}
@@ -328,11 +328,11 @@ export default function SplashScreen({ onComplete }) {
               {(phase === 'curtain' || phase === 'text') && (
                 <>
                   <motion.div
-                    style={{ position: 'absolute', inset: 0, left: 0, width: '50%', background: 'linear-gradient(to right,#ede0c4,#f5ead6)', transformOrigin: 'left', zIndex: 3 }}
+                    style={{ position: 'absolute', inset: 0, left: 0, width: '50%', background: 'linear-gradient(to right,#1a0a2e,#2d1060)', transformOrigin: 'left', zIndex: 3 }}
                     initial={{ scaleX: 1 }} animate={{ scaleX: 0 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                   />
                   <motion.div
-                    style={{ position: 'absolute', inset: 0, right: 0, left: '50%', background: 'linear-gradient(to left,#ede0c4,#f5ead6)', transformOrigin: 'right', zIndex: 3 }}
+                    style={{ position: 'absolute', inset: 0, right: 0, left: '50%', background: 'linear-gradient(to left,#1a0a2e,#2d1060)', transformOrigin: 'right', zIndex: 3 }}
                     initial={{ scaleX: 1 }} animate={{ scaleX: 0 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                   />
                 </>
@@ -364,7 +364,7 @@ export default function SplashScreen({ onComplete }) {
                 transition={{ duration: 0.7 }}
               >
                 <motion.p
-                  style={{ color: '#b8860b', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,2vw,11px)', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '14px' }}
+                  style={{ color: '#d4af37', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,2vw,11px)', letterSpacing: '0.45em', textTransform: 'uppercase', marginBottom: '14px' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}
                 >
                   Wedding Invitation
@@ -372,7 +372,7 @@ export default function SplashScreen({ onComplete }) {
 
                 <motion.h1
                   className="font-playfair"
-                  style={{ color: '#4a2c1a', fontSize: 'clamp(1.5rem,5vw,2.8rem)', lineHeight: 1.2 }}
+                  style={{ color: '#f0e8ff', fontSize: 'clamp(1.5rem,5vw,2.8rem)', lineHeight: 1.2 }}
                   initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}
                 >
                   A. Selvaraja
@@ -388,7 +388,7 @@ export default function SplashScreen({ onComplete }) {
 
                 <motion.h1
                   className="font-playfair"
-                  style={{ color: '#4a2c1a', fontSize: 'clamp(1.5rem,5vw,2.8rem)', lineHeight: 1.2 }}
+                  style={{ color: '#f0e8ff', fontSize: 'clamp(1.5rem,5vw,2.8rem)', lineHeight: 1.2 }}
                   initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
                 >
                   R. Rathna
@@ -396,7 +396,7 @@ export default function SplashScreen({ onComplete }) {
 
                 <motion.p
                   className="font-cormorant"
-                  style={{ color: '#8b6914', fontSize: 'clamp(0.9rem,2.5vw,1.2rem)', fontStyle: 'italic', marginTop: '10px' }}
+                  style={{ color: '#b8a0e8', fontSize: 'clamp(0.9rem,2.5vw,1.2rem)', fontStyle: 'italic', marginTop: '10px' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85 }}
                 >
                   29 May 2026 · Bellezza Event Hall, Coimbatore
