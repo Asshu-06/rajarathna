@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import heroBg from '../assets/herobg.jpeg'
 
@@ -49,11 +50,41 @@ const HERO_PETALS = Array.from({ length: 25 }, (_, i) => ({
 }))
 
 export default function Home() {
-  // backgroundAttachment: fixed is GPU-expensive on mobile — use scroll on small screens
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+  const wrapRef = useRef(null)
+  const bgRef = useRef(null)
+
+  useEffect(() => {
+    const wrap = wrapRef.current
+    const bg = bgRef.current
+    if (!wrap || !bg) return
+
+    const update = () => {
+      const r = wrap.getBoundingClientRect()
+      const vw = window.innerWidth
+      const vh = window.innerHeight
+      if (r.bottom <= 0 || r.top >= vh) {
+        bg.style.clipPath = 'inset(100%)'
+        return
+      }
+      const t = Math.max(0, r.top)
+      const b = Math.max(0, vh - r.bottom)
+      const l = Math.max(0, r.left)
+      const ri = Math.max(0, vw - r.right)
+      bg.style.clipPath = `inset(${t}px ${ri}px ${b}px ${l}px)`
+    }
+
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update, { passive: true })
+    update()
+    return () => {
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
+    }
+  }, [])
 
   return (
     <section
+      ref={wrapRef}
       id="home"
       style={{
         position: 'relative',
@@ -62,18 +93,22 @@ export default function Home() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        overflow: 'hidden',
-        backgroundImage: `url(${heroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: isMobile ? 'scroll' : 'fixed',
       }}
     >
-      {/* Dark overlay */}
-      <div style={{
-        position: 'absolute', inset: 0,
-        background: 'linear-gradient(to bottom, rgba(30,15,5,0.5) 0%, rgba(30,15,5,0.68) 60%, rgba(30,15,5,0.82) 100%)'
-      }} />
+      {/* Truly fixed background — works on iOS/Android */}
+      <div
+        ref={bgRef}
+        style={{
+          position: 'fixed',
+          top: 0, left: 0, right: 0, bottom: 0,
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+      {/* Dark overlay — removed */}
 
       {/* Continuously falling petals */}
       {HERO_PETALS.map(p => <FallingPetal key={p.id} {...p} />)}
@@ -100,11 +135,8 @@ export default function Home() {
 
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }}>
           <h1 className="font-playfair" style={{ color: '#fdf8ee', fontSize: 'clamp(2rem, 6vw, 4.5rem)', lineHeight: 1.15, marginBottom: '4px' }}>
-            Dr. M. Vignesh
+            A. Selvaraja
           </h1>
-          <p className="font-cormorant" style={{ color: '#d4af37', fontSize: 'clamp(1.1rem, 2.5vw, 1.75rem)', fontStyle: 'italic', marginBottom: '8px' }}>
-            M.B.B.S.
-          </p>
         </motion.div>
 
         <motion.p className="font-playfair"
@@ -116,11 +148,8 @@ export default function Home() {
 
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.9 }}>
           <h1 className="font-playfair" style={{ color: '#fdf8ee', fontSize: 'clamp(2rem, 6vw, 4.5rem)', lineHeight: 1.15, marginBottom: '4px' }}>
-            V. Shalini
+            R. Rathna
           </h1>
-          <p className="font-cormorant" style={{ color: '#d4af37', fontSize: 'clamp(1.1rem, 2.5vw, 1.75rem)', fontStyle: 'italic' }}>
-            D.Pharm.
-          </p>
         </motion.div>
 
         <motion.div className="gold-divider" style={{ margin: '28px auto' }}
@@ -131,14 +160,14 @@ export default function Home() {
           style={{ color: '#e8d5b0', fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', fontStyle: 'italic', marginBottom: '12px' }}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.2 }}
         >
-          "A union of care, compassion &amp; commitment"
+          "Where Coimbatore's ambition meets Kumbakonam's grace"
         </motion.p>
 
         <motion.p
           style={{ color: '#c4a882', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(0.8rem, 1.8vw, 1rem)', letterSpacing: '0.05em' }}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.4 }}
         >
-          S. Murugaiyan – M. Chitra request your gracious presence
+          Mr. &amp; Mrs. Family request your gracious presence
         </motion.p>
 
         {/* Scroll cue */}

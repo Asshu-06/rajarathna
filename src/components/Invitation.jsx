@@ -56,27 +56,41 @@ export default function Invitation() {
           }}
         >
           <p className="font-cormorant" style={{ color: '#4a2c1a', fontSize: 'clamp(1rem,2.5vw,1.4rem)', fontStyle: 'italic', textAlign: 'center', lineHeight: 1.7, marginBottom: '20px' }}>
-            With the divine blessings of the Almighty and with immense joy in our hearts,
+            Mr. &amp; Mrs. Family cordially invite you to celebrate the auspicious wedding ceremony of
           </p>
           <p className="font-cormorant" style={{ color: '#5a3a1a', fontSize: 'clamp(0.95rem,2vw,1.25rem)', textAlign: 'center', lineHeight: 1.7, marginBottom: '24px' }}>
-            We joyfully announce the auspicious wedding of
+            With the blessings of family and friends, we request your gracious presence to make this occasion more memorable.
           </p>
 
           <motion.div
             style={{ textAlign: 'center', padding: 'clamp(16px,3vw,28px) 0', borderTop: '1px solid rgba(212,175,55,0.22)', borderBottom: '1px solid rgba(212,175,55,0.22)', marginBottom: '28px' }}
             {...fadeUp(0.28)}
           >
-            <p className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.4rem,4vw,2.5rem)' }}>Dr. M. Vignesh M.B.B.S.</p>
-            <p className="font-cormorant" style={{ color: '#8b6914', fontSize: 'clamp(0.9rem,2vw,1.2rem)', fontStyle: 'italic', marginTop: '6px' }}>Son of S. Murugaiyan &amp; M. Chitra</p>
-            <p className="font-playfair" style={{ color: '#d4af37', fontSize: 'clamp(1.6rem,4vw,2.5rem)', margin: '12px 0' }}>&amp;</p>
-            <p className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.4rem,4vw,2.5rem)' }}>V. Shalini D.Pharm.</p>
+            <p className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.4rem,4vw,2.5rem)' }}>✨ A. Selvaraja</p>
+            <p className="font-playfair" style={{ color: '#d4af37', fontSize: 'clamp(1.6rem,4vw,2.5rem)', margin: '12px 0' }}>with</p>
+            <p className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.4rem,4vw,2.5rem)' }}>✨ R. Rathna</p>
           </motion.div>
 
-          <motion.p className="font-cormorant" {...fadeUp(0.38)}
-            style={{ color: '#4a2c1a', fontSize: 'clamp(1rem,2.5vw,1.4rem)', fontStyle: 'italic', textAlign: 'center', lineHeight: 1.7 }}>
-            Your presence and blessings will make this occasion truly memorable.
-            We warmly welcome you and your family to celebrate this joyous union.
-          </motion.p>
+          <motion.div {...fadeUp(0.38)} style={{ marginBottom: '16px' }}>
+            <p className="font-cormorant" style={{ color: '#8b1a2f', fontSize: 'clamp(1rem,2.5vw,1.3rem)', textAlign: 'center', marginBottom: '8px' }}>
+              🌼 Haldi Ceremony
+            </p>
+            <p className="font-cormorant" style={{ color: '#4a2c1a', fontSize: 'clamp(0.95rem,2vw,1.2rem)', textAlign: 'center', lineHeight: 1.7 }}>
+              📅 28th May 2026 &nbsp;🕓 4:00 PM – 9:00 PM
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp(0.44)} style={{ marginBottom: '20px' }}>
+            <p className="font-cormorant" style={{ color: '#8b1a2f', fontSize: 'clamp(1rem,2.5vw,1.3rem)', textAlign: 'center', marginBottom: '8px' }}>
+              💍 Muhurtham / Marriage
+            </p>
+            <p className="font-cormorant" style={{ color: '#4a2c1a', fontSize: 'clamp(0.95rem,2vw,1.2rem)', textAlign: 'center', lineHeight: 1.7 }}>
+              📅 29th May 2026 &nbsp;🕣 8:30 AM – 9:30 AM
+            </p>
+            <p className="font-cormorant" style={{ color: '#4a2c1a', fontSize: 'clamp(0.95rem,2vw,1.2rem)', textAlign: 'center', lineHeight: 1.7 }}>
+              📍 Bellezza Event Hall, Coimbatore
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

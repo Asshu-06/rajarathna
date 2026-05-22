@@ -115,7 +115,7 @@ function MainApp() {
               style={{ color: '#4a2c1a', fontSize: 'clamp(1.6rem,5vw,2.6rem)', textAlign: 'center', lineHeight: 1.3, marginBottom: '6px' }}
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.65 }}
             >
-              Dr. M. Vignesh
+              A. Selvaraja
             </motion.h1>
             <motion.p
               className="font-playfair"
@@ -129,14 +129,14 @@ function MainApp() {
               style={{ color: '#4a2c1a', fontSize: 'clamp(1.6rem,5vw,2.6rem)', textAlign: 'center', lineHeight: 1.3, marginBottom: '8px' }}
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
             >
-              V. Shalini
+              R. Rathna
             </motion.h1>
             <motion.p
               className="font-cormorant"
               style={{ color: '#8b6914', fontSize: 'clamp(0.9rem,2.5vw,1.1rem)', fontStyle: 'italic', marginBottom: '40px' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.05 }}
             >
-              27 May 2026 · Kumbakonam
+              29 May 2026 · Bellezza Event Hall, Coimbatore
             </motion.p>
 
             <motion.button

@@ -3,7 +3,7 @@ import useHighlight from '../hooks/useHighlight'
 
 export default function MapFooter() {
   const [ref, inView] = useHighlight(0.08)
-  const mapUrl = 'https://maps.google.com/maps?q=Raya+Mahal+Kumbakonam+Tamil+Nadu&t=&z=17&ie=UTF8&iwloc=&output=embed'
+  const mapUrl = 'https://maps.google.com/maps?q=Bellezza+Event+Hall+Coimbatore+Tamil+Nadu&t=&z=17&ie=UTF8&iwloc=&output=embed'
 
   const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 24 },
@@ -33,7 +33,7 @@ export default function MapFooter() {
             Venue Location
           </h2>
           <p className="font-cormorant" style={{ color: '#8b6914', fontSize: 'clamp(1rem,2.5vw,1.3rem)', fontStyle: 'italic', marginBottom: '16px' }}>
-            Raya Mahal A/C, Kumbakonam
+            Bellezza Event Hall, Coimbatore
           </p>
           <div className="gold-divider" />
         </motion.div>
@@ -59,7 +59,7 @@ export default function MapFooter() {
         {/* Button */}
         <motion.div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'clamp(32px,5vw,56px)' }} {...fadeUp(0.25)}>
           <a
-            href="https://www.google.com/maps/search/Raya+Mahal+Kumbakonam+Tamil+Nadu"
+            href="https://www.google.com/maps/search/Bellezza+Event+Hall+Coimbatore+Tamil+Nadu"
             target="_blank" rel="noopener noreferrer"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '10px',
@@ -95,13 +95,13 @@ export default function MapFooter() {
             <div style={{ width: '60px', height: '1px', background: 'linear-gradient(90deg,#d4af37,transparent)' }} />
           </div>
           <p className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.1rem,3vw,1.8rem)', fontStyle: 'italic', marginBottom: '10px' }}>
-            "Your presence is our honour"
+            "Built on love, blessed by tradition"
           </p>
           <p className="font-cormorant" style={{ color: '#8b6914', fontSize: 'clamp(0.95rem,2vw,1.2rem)' }}>
-            Dr. M. Vignesh M.B.B.S. &amp; V. Shalini D.Pharm.
+            A. Selvaraja &amp; R. Rathna
           </p>
           <p style={{ color: '#b8a080', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.3em', textTransform: 'uppercase', marginTop: '16px' }}>
-            27 May 2026 · Kumbakonam
+            29 May 2026 · Bellezza Event Hall, Coimbatore
           </p>
         </motion.div>
       </div>

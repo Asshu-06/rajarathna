@@ -26,9 +26,8 @@ function Petal({ delay, x, rotate, size, color, drift }) {
   )
 }
 
-// Groom — detailed with walking bob
+// Groom — sharp business suit (real estate professional)
 function Groom({ walking, reached }) {
-  const legSwing = walking ? [0, 18, 0, -18, 0] : [0]
   const bodyBob = walking ? [0, -3, 0, -3, 0] : [0]
 
   return (
@@ -42,40 +41,52 @@ function Groom({ walking, reached }) {
       {/* Shadow */}
       <ellipse cx="40" cy="165" rx="18" ry="4" fill="rgba(0,0,0,0.12)"/>
       {/* Head */}
-      <ellipse cx="40" cy="17" rx="12" ry="13" fill="#7c3d2a"/>
-      {/* Hair */}
-      <path d="M28 12 Q40 4 52 12 Q52 8 40 6 Q28 8 28 12Z" fill="#3d1a0a"/>
+      <ellipse cx="40" cy="17" rx="12" ry="13" fill="#8b5e3c"/>
+      {/* Hair — neat side-parted */}
+      <path d="M28 10 Q40 3 52 10 Q50 6 40 5 Q30 6 28 10Z" fill="#2a1505"/>
+      <path d="M28 10 Q32 8 40 8 Q48 8 52 10 Q48 12 40 12 Q32 12 28 10Z" fill="#3d1a0a"/>
       {/* Neck */}
-      <rect x="36" y="28" width="8" height="7" fill="#7c3d2a"/>
-      {/* Shirt collar */}
-      <path d="M34 35 L40 42 L46 35" fill="white" opacity="0.9"/>
-      {/* Suit jacket */}
-      <path d="M18 36 Q40 32 62 36 L66 92 Q40 97 14 92 Z" fill="#2d1a0e"/>
+      <rect x="36" y="28" width="8" height="7" fill="#8b5e3c"/>
+      {/* White shirt */}
+      <path d="M34 35 L40 43 L46 35" fill="white" opacity="0.95"/>
+      {/* Smart navy suit jacket */}
+      <path d="M18 36 Q40 31 62 36 L66 92 Q40 98 14 92 Z" fill="#1a2744"/>
       {/* Lapels */}
-      <path d="M34 35 L22 52 L32 56 Z" fill="#1a0e06"/>
-      <path d="M46 35 L58 52 L48 56 Z" fill="#1a0e06"/>
-      {/* Tie */}
-      <path d="M37 35 L40 58 L43 35" fill="#d4af37" opacity="0.9"/>
+      <path d="M34 35 L20 54 L32 57 Z" fill="#141e36"/>
+      <path d="M46 35 L60 54 L48 57 Z" fill="#141e36"/>
+      {/* Gold tie */}
+      <path d="M37 35 L40 60 L43 35" fill="#d4af37" opacity="0.95"/>
+      {/* Tie knot */}
+      <ellipse cx="40" cy="36" rx="3" ry="2" fill="#b8960b"/>
       {/* Pocket square */}
-      <path d="M52 48 L58 44 L60 50 Z" fill="white" opacity="0.7"/>
+      <path d="M52 46 L58 42 L60 49 Z" fill="white" opacity="0.8"/>
+      {/* Suit button */}
+      <circle cx="40" cy="72" r="1.5" fill="#d4af37" opacity="0.6"/>
       {/* Left arm */}
       <motion.g
-        animate={{ rotate: reached ? -30 : (walking ? [0, 20, 0, -20, 0] : 0) }}
+        animate={{ rotate: reached ? -25 : (walking ? [0, 20, 0, -20, 0] : 0) }}
         transition={{ duration: 0.5, repeat: walking ? Infinity : 0 }}
         style={{ transformOrigin: '20px 42px' }}
       >
-        <path d="M20 42 Q6 62 8 82" stroke="#2d1a0e" strokeWidth="11" strokeLinecap="round" fill="none"/>
-        {/* Hand */}
-        <ellipse cx="8" cy="84" rx="5" ry="4" fill="#7c3d2a"/>
+        <path d="M20 42 Q6 62 8 82" stroke="#1a2744" strokeWidth="11" strokeLinecap="round" fill="none"/>
+        <ellipse cx="8" cy="84" rx="5" ry="4" fill="#8b5e3c"/>
       </motion.g>
-      {/* Right arm */}
+      {/* Right arm — holding briefcase when reached */}
       <motion.g
-        animate={{ rotate: reached ? 30 : (walking ? [0, -20, 0, 20, 0] : 0) }}
+        animate={{ rotate: reached ? 20 : (walking ? [0, -20, 0, 20, 0] : 0) }}
         transition={{ duration: 0.5, repeat: walking ? Infinity : 0 }}
         style={{ transformOrigin: '60px 42px' }}
       >
-        <path d="M60 42 Q74 62 72 82" stroke="#2d1a0e" strokeWidth="11" strokeLinecap="round" fill="none"/>
-        <ellipse cx="72" cy="84" rx="5" ry="4" fill="#7c3d2a"/>
+        <path d="M60 42 Q74 62 72 82" stroke="#1a2744" strokeWidth="11" strokeLinecap="round" fill="none"/>
+        <ellipse cx="72" cy="84" rx="5" ry="4" fill="#8b5e3c"/>
+        {/* Briefcase */}
+        {reached && (
+          <>
+            <rect x="65" y="84" width="16" height="11" rx="2" fill="#8b6914" stroke="#d4af37" strokeWidth="0.8"/>
+            <path d="M68 84 L68 81 Q72 79 76 81 L76 84" stroke="#d4af37" strokeWidth="0.8" fill="none"/>
+            <line x1="65" y1="89" x2="81" y2="89" stroke="#d4af37" strokeWidth="0.6" opacity="0.7"/>
+          </>
+        )}
       </motion.g>
       {/* Left leg */}
       <motion.g
@@ -83,8 +94,8 @@ function Groom({ walking, reached }) {
         transition={{ duration: 0.5, repeat: walking ? Infinity : 0 }}
         style={{ transformOrigin: '30px 92px' }}
       >
-        <path d="M30 92 L26 148" stroke="#1a0e06" strokeWidth="12" strokeLinecap="round" fill="none"/>
-        <ellipse cx="24" cy="152" rx="10" ry="5" fill="#0d0806"/>
+        <path d="M30 92 L26 148" stroke="#141e36" strokeWidth="12" strokeLinecap="round" fill="none"/>
+        <ellipse cx="24" cy="152" rx="10" ry="5" fill="#0d1520"/>
       </motion.g>
       {/* Right leg */}
       <motion.g
@@ -92,8 +103,8 @@ function Groom({ walking, reached }) {
         transition={{ duration: 0.5, repeat: walking ? Infinity : 0, delay: 0.25 }}
         style={{ transformOrigin: '50px 92px' }}
       >
-        <path d="M50 92 L54 148" stroke="#1a0e06" strokeWidth="12" strokeLinecap="round" fill="none"/>
-        <ellipse cx="56" cy="152" rx="10" ry="5" fill="#0d0806"/>
+        <path d="M50 92 L54 148" stroke="#141e36" strokeWidth="12" strokeLinecap="round" fill="none"/>
+        <ellipse cx="56" cy="152" rx="10" ry="5" fill="#0d1520"/>
       </motion.g>
     </motion.svg>
   )
@@ -145,7 +156,7 @@ function Bride({ walking, reached }) {
         <circle cx="14" cy="68" r="4" stroke="#d4af37" strokeWidth="1.5" fill="none"/>
         <circle cx="14" cy="73" r="4" stroke="#c0a030" strokeWidth="1.5" fill="none"/>
       </motion.g>
-      {/* Right arm */}
+      {/* Right arm — holding bouquet when reached */}
       <motion.g
         animate={{ rotate: reached ? 25 : (walking ? [0, -15, 0, 15, 0] : 0) }}
         transition={{ duration: 0.5, repeat: walking ? Infinity : 0 }}
@@ -155,6 +166,15 @@ function Bride({ walking, reached }) {
         <ellipse cx="66" cy="72" rx="4" ry="3.5" fill="#7c3d2a"/>
         <circle cx="66" cy="68" r="4" stroke="#d4af37" strokeWidth="1.5" fill="none"/>
         <circle cx="66" cy="73" r="4" stroke="#c0a030" strokeWidth="1.5" fill="none"/>
+        {/* Bouquet */}
+        {reached && (
+          <>
+            <circle cx="70" cy="76" r="4" fill="#ff8fa3" opacity="0.9"/>
+            <circle cx="76" cy="72" r="3.5" fill="#ffb347" opacity="0.9"/>
+            <circle cx="74" cy="79" r="3" fill="#ff6b8a" opacity="0.85"/>
+            <path d="M72 82 L73 90" stroke="#4a7c3f" strokeWidth="1.5" strokeLinecap="round"/>
+          </>
+        )}
       </motion.g>
       {/* Legs under saree */}
       <motion.g
@@ -355,7 +375,7 @@ export default function SplashScreen({ onComplete }) {
                   style={{ color: '#4a2c1a', fontSize: 'clamp(1.5rem,5vw,2.8rem)', lineHeight: 1.2 }}
                   initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}
                 >
-                  Dr. M. Vignesh
+                  A. Selvaraja
                 </motion.h1>
 
                 <motion.p
@@ -371,7 +391,7 @@ export default function SplashScreen({ onComplete }) {
                   style={{ color: '#4a2c1a', fontSize: 'clamp(1.5rem,5vw,2.8rem)', lineHeight: 1.2 }}
                   initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
                 >
-                  V. Shalini
+                  R. Rathna
                 </motion.h1>
 
                 <motion.p
@@ -379,7 +399,7 @@ export default function SplashScreen({ onComplete }) {
                   style={{ color: '#8b6914', fontSize: 'clamp(0.9rem,2.5vw,1.2rem)', fontStyle: 'italic', marginTop: '10px' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85 }}
                 >
-                  27 May 2026 · Kumbakonam
+                  29 May 2026 · Bellezza Event Hall, Coimbatore
                 </motion.p>
               </motion.div>
             )}

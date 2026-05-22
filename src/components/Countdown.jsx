@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
 
-const TARGET = new Date('2026-05-27T09:00:00')
+const TARGET = new Date('2026-05-29T08:30:00')
 
 function getTimeLeft() {
   const diff = TARGET - new Date()
@@ -93,10 +93,10 @@ export default function Countdown() {
             Counting down to our special day
           </p>
           <h2 className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.8rem,5vw,3rem)', marginBottom: '8px' }}>
-            27 May 2026
+            29 May 2026
           </h2>
           <p className="font-cormorant" style={{ color: '#8b6914', fontSize: 'clamp(1rem,2.5vw,1.4rem)', fontStyle: 'italic', marginBottom: 'clamp(28px,5vw,48px)' }}>
-            9:00 AM — Raya Mahal A/C, Kumbakonam
+            8:30 AM — Bellezza Event Hall, Coimbatore
           </p>
         </motion.div>
 

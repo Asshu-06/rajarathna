@@ -123,3 +123,28 @@ body::-webkit-scrollbar {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(184,134,11,0.5);
 }
+
+/* On mobile, background-attachment:fixed is broken — fall back to scroll */
+@media (max-width: 768px) {
+  [style*="background-attachment: fixed"],
+  [style*="background-attachment:fixed"] {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Parallax background layer */
+.parallax-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* Mobile: disable fixed attachment — image becomes static cover */
+@media (max-width: 1024px) {
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+}

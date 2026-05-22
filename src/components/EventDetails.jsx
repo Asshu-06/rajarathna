@@ -124,13 +124,13 @@ export default function EventDetails() {
 
   const weddingBack = [
     { label: 'Dress Code', value: 'Traditional / Ethnic Wear\nSaree, Dhoti, Kurta welcome' },
-    { label: 'Muhurtham', value: '9:00 AM sharp\nPlease arrive by 8:30 AM' },
+    { label: 'Muhurtham', value: '8:30 AM sharp\nPlease arrive by 8:00 AM' },
     { label: 'Blessings', value: '"May your presence fill our hearts\nwith joy and our home with love"' },
   ]
 
-  const receptionBack = [
-    { label: 'Dress Code', value: 'Formal / Semi-formal\nElegant & festive attire' },
-    { label: 'Programme', value: 'Dinner & Celebrations\nMusic · Dance · Memories' },
+  const haldiBack = [
+    { label: 'Dress Code', value: 'Yellow / Traditional Wear\nFestive & colourful attire' },
+    { label: 'Programme', value: 'Haldi Ceremony\nMusic · Celebrations · Dinner' },
     { label: 'Note', value: '"Your smile is our decoration,\nyour blessing our greatest gift"' },
   ]
 
@@ -163,21 +163,21 @@ export default function EventDetails() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 'clamp(16px,3vw,40px)', alignItems: 'stretch' }}>
           <FlipCard
-            title="Reception"
-            date="26 May 2026"
-            time="6:30 PM onwards"
-            venue="Venue details to follow"
-            icon="🎉"
+            title="Haldi Ceremony"
+            date="28 May 2026"
+            time="4:00 PM – 9:00 PM"
+            venue="Bellezza Event Hall, Coimbatore"
+            icon="🌼"
             accent="#b8860b"
-            backContent={receptionBack}
+            backContent={haldiBack}
             delay={0.1}
             inView={inView}
           />
           <FlipCard
-            title="Wedding Ceremony"
-            date="27 May 2026"
-            time="9:00 AM – 10:30 AM"
-            venue="Raya Mahal A/C, Kumbakonam"
+            title="Muhurtham / Marriage"
+            date="29 May 2026"
+            time="8:30 AM – 9:30 AM"
+            venue="Bellezza Event Hall, Coimbatore"
             icon="💍"
             accent="#8b1a2f"
             backContent={weddingBack}

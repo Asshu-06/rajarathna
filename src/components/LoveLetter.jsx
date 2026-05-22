@@ -3,21 +3,21 @@ import { motion, AnimatePresence } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
 import ringBg from '../assets/ringvk.jpeg'
 
-const FULL_TEXT = `Kumbakonam, May 2026
+const FULL_TEXT = `Wedding Invitation Text
 
-To every soul who has walked beside us, held our hands through storms, and celebrated our smallest joys —
+Mr. & Mrs. Family cordially invite you to celebrate the auspicious wedding ceremony of
 
-Life has a quiet way of writing its most beautiful chapters when we least expect it. Two people, shaped by years of dedication and the gentle art of healing — found in each other not just a partner, but a home.
+✨ A. Selvaraja with ✨ R. Rathna
 
-Vignesh, with his steady hands and steadier heart, has always known how to make the world feel a little safer. Shalini, with her warmth and grace, has always known how to make it feel a little more beautiful. Together, they are medicine for each other's soul.
+🌼 Haldi Ceremony
+📅 28th May 2026 🕓 4:00 PM – 9:00 PM
 
-They do not promise a life without rain — they promise to be each other's shelter. They do not promise a path without thorns — they promise to walk it hand in hand, never letting go.
+💍 Muhurtham / Marriage
+📅 29th May 2026 🕣 8:30 AM – 9:30 AM
 
-This union is not just the joining of two hearts — it is the merging of two families, two stories, and a thousand shared dreams yet to be lived.
+📍 Venue: Bellezza Event Hall, Coimbatore
 
-With all our love,
-Dr. M. Vignesh & V. Shalini
-M.B.B.S. & D.Pharm.`
+"With the blessings of family and friends, we request your gracious presence to make this occasion more memorable."`
 
 function Cursor() {
   return (
@@ -146,7 +146,7 @@ export default function LoveLetter() {
             A Letter from the Heart
           </p>
           <h2 className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.8rem,5vw,2.8rem)', marginBottom: '10px' }}>
-            Our Story, Our Promise
+            Two Cities, One Love
           </h2>
           <motion.p
             style={{ color: '#8b6914', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(10px,1.8vw,12px)', letterSpacing: '0.12em' }}

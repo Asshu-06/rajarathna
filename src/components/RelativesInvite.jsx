@@ -72,12 +72,12 @@ export default function RelativesInvite() {
 
           <motion.p className="font-cormorant" {...fadeUp(0.4)}
             style={{ color: '#5a3a1a', fontSize: 'clamp(1.05rem,2.5vw,1.35rem)', lineHeight: 1.85, marginBottom: '20px' }}>
-            Now, as we step into the most beautiful chapter of our lives, we cannot imagine beginning it without your blessings, your laughter, and your presence beside us. A celebration without you would be like a garland without flowers — incomplete.
+            What began as a meeting arranged by two families who trusted each other became something neither of us expected — a quiet understanding, a growing warmth, and a love that felt both new and familiar at the same time. They say arranged marriages are chosen by the family, but what grew between Selvaraja and Rathna was chosen by the heart.
           </motion.p>
 
           <motion.p className="font-cormorant" {...fadeUp(0.47)}
             style={{ color: '#5a3a1a', fontSize: 'clamp(1.05rem,2.5vw,1.35rem)', lineHeight: 1.85, marginBottom: '32px' }}>
-            Please come. Not just as guests — but as the heartbeat of this celebration. Your smile is our decoration, your blessing is our auspiciousness, and your love is the greatest gift you could ever give us on this day.
+            Now, as we step into the most beautiful chapter of our lives, we cannot imagine beginning it without your blessings, your laughter, and your presence beside us. A celebration without you would be like a garland without flowers — incomplete. Please come. Not just as guests — but as the heartbeat of this celebration. Your smile is our decoration, your blessing is our auspiciousness, and your love is the greatest gift you could ever give us on this day.
           </motion.p>
 
           {/* Highlighted invite box */}
@@ -98,14 +98,16 @@ export default function RelativesInvite() {
               The Wedding of
             </p>
             <p className="font-playfair" style={{ color: '#8b1a2f', fontSize: 'clamp(1.2rem,3vw,1.8rem)', marginBottom: '4px' }}>
-              Dr. M. Vignesh M.B.B.S.
+              A. Selvaraja
             </p>
             <p className="font-playfair" style={{ color: '#d4af37', fontSize: 'clamp(1.3rem,3vw,1.8rem)', margin: '6px 0' }}>&amp;</p>
             <p className="font-playfair" style={{ color: '#8b1a2f', fontSize: 'clamp(1.2rem,3vw,1.8rem)', marginBottom: '20px' }}>
-              V. Shalini D.Pharm.
+              R. Rathna
             </p>
             <p className="font-cormorant" style={{ color: '#5a3a1a', fontSize: 'clamp(1rem,2.5vw,1.3rem)', lineHeight: 1.7, fontStyle: 'italic' }}>
-              Please see the Event Details section above for full schedule, venue and timings.
+              🌼 Haldi: 28 May 2026, 4:00 PM – 9:00 PM<br/>
+              💍 Muhurtham: 29 May 2026, 8:30 AM – 9:30 AM<br/>
+              📍 Bellezza Event Hall, Coimbatore
             </p>
           </motion.div>
 
@@ -114,7 +116,8 @@ export default function RelativesInvite() {
             Come, eat with us, dance with us, cry happy tears with us.
             Let your laughter fill the halls and your blessings fill our hearts.
             We need you there — not just as witnesses, but as the very reason
-            this day will be unforgettable.
+            this day will be unforgettable. Because it was you — your prayers,
+            your trust, your love — that brought two hearts together.
           </motion.p>
 
           <motion.div {...fadeUp(0.68)} style={{ borderTop: '1px solid rgba(212,175,55,0.2)', paddingTop: '24px' }}>
@@ -122,7 +125,7 @@ export default function RelativesInvite() {
               With folded hands and full hearts,
             </p>
             <p className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.2rem,3vw,1.6rem)', fontWeight: 600 }}>
-              S. Murugaiyan &amp; M. Chitra
+              Mr. &amp; Mrs. Family
             </p>
             <p className="font-cormorant" style={{ color: '#8b6914', fontSize: 'clamp(0.9rem,2vw,1.1rem)', fontStyle: 'italic', marginTop: '4px' }}>
               &amp; the entire family
