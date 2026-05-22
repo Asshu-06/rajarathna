@@ -17,6 +17,7 @@ export default function Invitation() {
       className={`section-highlight${inView ? ' in-view' : ''}`}
       style={{
         position: 'relative',
+        zIndex: 1,
         width: '100%',
         padding: 'clamp(64px,10vw,120px) 0',
         background: 'linear-gradient(180deg,#1a0510 0%,#2d0a1e 100%)',

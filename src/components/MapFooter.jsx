@@ -16,7 +16,7 @@ export default function MapFooter() {
     <footer
       ref={ref}
       className={`section-highlight${inView ? ' in-view' : ''}${inView ? ' section-glow' : ''}`}
-      style={{ position: 'relative', width: '100%', background: 'linear-gradient(180deg,#120008 0%,#2d0a1e 100%)' }}
+      style={{ position: 'relative', zIndex: 1, width: '100%', background: 'linear-gradient(180deg,#120008 0%,#2d0a1e 100%)' }}
     >
       <div className="section-line" />
       <WaveDivider fill="#120008" />

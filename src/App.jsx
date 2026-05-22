@@ -184,12 +184,12 @@ function MainApp() {
             transition={{ duration: 0.8 }}
           >
             <Home />
-            <ParallaxDivider image={fixedbgone} height="320px" overlay="rgba(20,10,4,0.5)">
+            <ParallaxDivider image={fixedbgone} height="420px" topColor="#1a0510" bottomColor="#1a0510">
               <div style={{ textAlign: 'center' }} />
             </ParallaxDivider>
 
             <Countdown />
-            <ParallaxDivider image={fixedbgtwo} height="300px" overlay="rgba(20,10,4,0.52)">
+            <ParallaxDivider image={fixedbgtwo} height="400px" topColor="#1a0510" bottomColor="#1a0510">
               <div style={{ textAlign: 'center' }}>
                 <svg viewBox="0 0 40 36" width="36" height="32" fill="#d4af37" style={{ opacity: 0.85 }}>
                   <path d="M20 34C20 34 2 22 2 11C2 5.5 6.5 2 11 2C14.5 2 17.5 4 20 7C22.5 4 25.5 2 29 2C33.5 2 38 5.5 38 11C38 22 20 34 20 34Z"/>
@@ -198,7 +198,7 @@ function MainApp() {
             </ParallaxDivider>
 
             <Invitation />
-            <ParallaxDivider image={fixedbgthree} height="300px" overlay="rgba(20,10,4,0.48)">
+            <ParallaxDivider image={fixedbgthree} height="400px" topColor="#1a0510" bottomColor="#1a0510">
               <div style={{ textAlign: 'center' }}>
                 <svg viewBox="0 0 24 24" width="32" height="32" fill="#d4af37" style={{ opacity: 0.85 }}>
                   <path d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5Z"/>
@@ -207,7 +207,7 @@ function MainApp() {
             </ParallaxDivider>
 
             <EventDetails />
-            <ParallaxDivider image={fixedbgfour} height="300px" overlay="rgba(20,10,4,0.5)">
+            <ParallaxDivider image={fixedbgfour} height="400px" topColor="#1a0510" bottomColor="#1a0510">
               <div style={{ textAlign: 'center' }}>
                 <p className="font-cormorant" style={{ color: '#e8d5b0', fontSize: 'clamp(1.1rem,3vw,1.6rem)', fontStyle: 'italic', letterSpacing: '0.05em' }}>
                   "Two hearts, one journey"
@@ -216,7 +216,7 @@ function MainApp() {
             </ParallaxDivider>
 
             <LoveLetter />
-            <ParallaxDivider image={fixedbgone} height="280px" overlay="rgba(20,10,4,0.52)">
+            <ParallaxDivider image={fixedbgone} height="380px" topColor="#1a0510" bottomColor="#1a0510">
               <div style={{ textAlign: 'center' }}>
                 <svg viewBox="0 0 40 36" width="36" height="32" fill="#d4af37" style={{ opacity: 0.85 }}>
                   <path d="M20 34C20 34 2 22 2 11C2 5.5 6.5 2 11 2C14.5 2 17.5 4 20 7C22.5 4 25.5 2 29 2C33.5 2 38 5.5 38 11C38 22 20 34 20 34Z"/>
@@ -225,7 +225,7 @@ function MainApp() {
             </ParallaxDivider>
 
             <RelativesInvite />
-            <ParallaxDivider image={fixedbgtwo} height="280px" overlay="rgba(20,10,4,0.5)">
+            <ParallaxDivider image={fixedbgtwo} height="380px" topColor="#1a0510" bottomColor="#120008">
               <div style={{ textAlign: 'center' }}>
                 <svg viewBox="0 0 24 24" width="32" height="32" fill="#d4af37" style={{ opacity: 0.85 }}>
                   <path d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5Z"/>

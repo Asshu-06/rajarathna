@@ -56,7 +56,7 @@ export default function EventDetails() {
     <section
       ref={ref}
       className={`section-highlight${inView ? ' in-view' : ''}`}
-      style={{ position: 'relative', width: '100%', padding: 'clamp(48px,8vw,96px) 0', background: 'linear-gradient(180deg,#1a0510 0%,#2d0a1e 100%)' }}
+      style={{ position: 'relative', zIndex: 1, width: '100%', padding: 'clamp(48px,8vw,96px) 0', background: 'linear-gradient(180deg,#1a0510 0%,#2d0a1e 100%)' }}
     >
       <div className="section-line" />
       <WaveDivider fill="#1a0510" />

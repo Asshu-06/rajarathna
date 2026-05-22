@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import heroBg from '../assets/herobg.jpeg'
 
@@ -120,6 +120,7 @@ export default function Home() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        overflow: 'hidden',
       }}
     >
       {/* Grid reveal background */}
@@ -196,11 +197,11 @@ export default function Home() {
           />
         </motion.div>
       </div>
-      {/* Bottom wave — flows into next section */}
-      <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', overflow: 'hidden', lineHeight: 0, zIndex: 3 }}>
-        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-          style={{ display: 'block', width: '100%', height: '60px' }}>
-          <path d="M0,30 C180,0 360,60 540,30 C720,0 900,60 1080,30 C1260,0 1380,40 1440,30 L1440,60 L0,60 Z" fill="#1a0510"/>
+      {/* Bottom wave — covers tile grid bottom edge, flows into next section */}
+      <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', overflow: 'hidden', lineHeight: 0, zIndex: 4 }}>
+        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+          style={{ display: 'block', width: '100%', height: '120px' }}>
+          <path d="M0,60 C180,0 360,120 540,60 C720,0 900,120 1080,60 C1260,0 1380,80 1440,60 L1440,120 L0,120 Z" fill="#1a0510"/>
         </svg>
       </div>
     </section>
