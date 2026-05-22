@@ -185,11 +185,7 @@ function MainApp() {
           >
             <Home />
             <ParallaxDivider image={fixedbgone} height="320px" overlay="rgba(20,10,4,0.5)">
-              <div style={{ textAlign: 'center' }}>
-                <svg viewBox="0 0 60 20" width="120" height="24" style={{ opacity: 0.8 }}>
-                  <path d="M0,10 L18,10 L24,2 L30,18 L36,4 L42,10 L60,10" stroke="#d4af37" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                </svg>
-              </div>
+              <div style={{ textAlign: 'center' }} />
             </ParallaxDivider>
 
             <Countdown />

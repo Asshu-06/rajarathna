@@ -1,120 +1,139 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import useHighlight from '../hooks/useHighlight'
 
-const ECGIcon = () => (
-  <svg viewBox="0 0 80 24" width="80" height="24">
-    <path d="M0,12 L16,12 L22,2 L28,22 L34,6 L40,12 L80,12"
-      stroke="#d4af37" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-  </svg>
-)
+// Scratch card — canvas overlay that erases on mouse/touch drag
+function ScratchCard({ title, date, time, venue, icon, accent, backContent, delay, inView }) {
+  const canvasRef = useRef(null)
+  const [scratched, setScratched] = useState(false)
+  const [scratchPct, setScratchPct] = useState(0)
+  const isDrawing = useRef(false)
 
-function FlipCard({ title, date, time, venue, accent, icon, backContent, delay, inView }) {
-  const [flipped, setFlipped] = useState(false)
-  const cardHeight = 'clamp(300px,42vw,400px)'
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    // Fill with scratch overlay
+    ctx.fillStyle = '#2a1050'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    // Add texture pattern
+    ctx.fillStyle = 'rgba(212,175,55,0.15)'
+    for (let i = 0; i < canvas.width; i += 8) {
+      for (let j = 0; j < canvas.height; j += 8) {
+        if ((i + j) % 16 === 0) ctx.fillRect(i, j, 4, 4)
+      }
+    }
+    // Scratch hint text
+    ctx.fillStyle = 'rgba(212,175,55,0.7)'
+    ctx.font = 'bold 14px Lato, sans-serif'
+    ctx.textAlign = 'center'
+    ctx.fillText('🪙 Scratch to Reveal', canvas.width / 2, canvas.height / 2 - 10)
+    ctx.font = '11px Lato, sans-serif'
+    ctx.fillStyle = 'rgba(212,175,55,0.5)'
+    ctx.fillText(title, canvas.width / 2, canvas.height / 2 + 14)
+  }, [inView, title])
+
+  const getPos = (e, canvas) => {
+    const rect = canvas.getBoundingClientRect()
+    const scaleX = canvas.width / rect.width
+    const scaleY = canvas.height / rect.height
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY
+    return {
+      x: (clientX - rect.left) * scaleX,
+      y: (clientY - rect.top) * scaleY,
+    }
+  }
+
+  const scratch = (e) => {
+    if (!isDrawing.current) return
+    e.preventDefault()
+    const canvas = canvasRef.current
+    const ctx = canvas.getContext('2d')
+    const { x, y } = getPos(e, canvas)
+    ctx.globalCompositeOperation = 'destination-out'
+    ctx.beginPath()
+    ctx.arc(x, y, 28, 0, Math.PI * 2)
+    ctx.fill()
+    // Check % scratched
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+    let transparent = 0
+    for (let i = 3; i < imageData.data.length; i += 4) {
+      if (imageData.data[i] === 0) transparent++
+    }
+    const pct = (transparent / (canvas.width * canvas.height)) * 100
+    setScratchPct(pct)
+    if (pct > 55) setScratched(true)
+  }
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 40, scale: 0.97 }}
       animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-      onClick={() => setFlipped(f => !f)}
-      style={{
-        perspective: '1200px',
-        cursor: 'pointer',
-        height: cardHeight,
-        width: '100%',
-      }}
+      style={{ position: 'relative', height: 'clamp(300px,42vw,400px)', width: '100%', borderRadius: '20px', overflow: 'hidden' }}
     >
-      <motion.div
-        animate={{ rotateY: flipped ? 180 : 0 }}
-        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-        style={{
-          position: 'relative',
-          width: '100%',
-          height: '100%',
-          transformStyle: 'preserve-3d',
-        }}
-      >
-        {/* FRONT */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          backfaceVisibility: 'hidden',
-          WebkitBackfaceVisibility: 'hidden',
-          borderRadius: '20px',
-          padding: 'clamp(24px,4vw,44px) clamp(20px,4vw,36px)',
-          display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
-          background: 'rgba(255,255,255,0.82)',
-          border: `1px solid ${accent}45`,
-          boxShadow: `0 10px 44px ${accent}20`,
-          backdropFilter: 'blur(14px)',
-          overflow: 'hidden',
-        }}>
-          <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '2px', borderRadius: '999px', background: `linear-gradient(90deg,transparent,${accent},transparent)` }} />
-          <div style={{ fontSize: '2rem', marginBottom: '14px' }}>{icon}</div>
-          <h3 className="font-playfair" style={{ color: '#4a2c1a', fontSize: 'clamp(1.2rem,3vw,1.7rem)', marginBottom: '10px' }}>{title}</h3>
-          <ECGIcon />
-          <p className="font-playfair" style={{ color: accent, fontSize: 'clamp(1.1rem,2.8vw,1.6rem)', fontWeight: 600, marginTop: '12px', marginBottom: '4px' }}>{date}</p>
-          <p className="font-cormorant" style={{ color: '#5a3a1a', fontSize: 'clamp(1rem,2.5vw,1.3rem)', marginBottom: '10px' }}>{time}</p>
-          {venue && (
-            <p style={{ color: '#8b6914', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(0.8rem,1.8vw,0.92rem)', marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid rgba(212,175,55,0.2)', width: '100%' }}>
-              📍 {venue}
-            </p>
-          )}
-          <motion.p
-            style={{ color: accent, fontFamily: 'Lato,sans-serif', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '12px', opacity: 0.7 }}
-            animate={{ opacity: [0.4, 0.9, 0.4] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            Tap to reveal ›
-          </motion.p>
-        </div>
-
-        {/* BACK */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          backfaceVisibility: 'hidden',
-          WebkitBackfaceVisibility: 'hidden',
-          transform: 'rotateY(180deg)',
-          borderRadius: '20px',
-          padding: 'clamp(24px,4vw,44px) clamp(20px,4vw,36px)',
-          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center',
-          background: `linear-gradient(135deg, ${accent}18, ${accent}06)`,
-          border: `1px solid ${accent}50`,
-          boxShadow: `0 10px 44px ${accent}25`,
-          backdropFilter: 'blur(14px)',
-          overflow: 'hidden',
-        }}>
-          <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '2px', borderRadius: '999px', background: `linear-gradient(90deg,transparent,${accent},transparent)` }} />
-          <div style={{ position: 'absolute', bottom: 0, left: '10%', right: '10%', height: '2px', borderRadius: '999px', background: `linear-gradient(90deg,transparent,${accent},transparent)` }} />
-
-          <svg viewBox="0 0 24 24" width="28" height="28" fill={accent} style={{ marginBottom: '14px', opacity: 0.85 }}>
-            <path d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5Z"/>
-          </svg>
-
+      {/* Content underneath */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        borderRadius: '20px',
+        padding: 'clamp(24px,4vw,44px) clamp(20px,4vw,36px)',
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center',
+        background: `linear-gradient(135deg, ${accent}22, ${accent}08)`,
+        border: `1px solid ${accent}50`,
+      }}>
+        <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>{icon}</div>
+        <h3 className="font-playfair" style={{ color: '#e8e0ff', fontSize: 'clamp(1.2rem,3vw,1.7rem)', marginBottom: '10px' }}>{title}</h3>
+        <p className="font-playfair" style={{ color: accent, fontSize: 'clamp(1.1rem,2.8vw,1.6rem)', fontWeight: 600, marginBottom: '4px' }}>{date}</p>
+        <p className="font-cormorant" style={{ color: '#c8caff', fontSize: 'clamp(1rem,2.5vw,1.3rem)', marginBottom: '10px' }}>{time}</p>
+        {venue && <p style={{ color: '#a8aaee', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(0.8rem,1.8vw,0.92rem)', marginBottom: '16px' }}>📍 {venue}</p>}
+        <div style={{ borderTop: `1px solid ${accent}30`, width: '100%', paddingTop: '12px' }}>
           {backContent.map((item, i) => (
-            <div key={i} style={{ marginBottom: i < backContent.length - 1 ? '14px' : 0, width: '100%' }}>
-              <p style={{ color: accent, fontFamily: 'Lato,sans-serif', fontSize: 'clamp(8px,1.5vw,10px)', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '4px' }}>
-                {item.label}
-              </p>
-              <p className="font-cormorant" style={{ color: '#4a2c1a', fontSize: 'clamp(0.9rem,2.2vw,1.15rem)', lineHeight: 1.6, whiteSpace: 'pre-line' }}>
-                {item.value}
-              </p>
-              {i < backContent.length - 1 && (
-                <div style={{ width: '40px', height: '1px', background: `${accent}40`, margin: '10px auto 0' }} />
-              )}
+            <div key={i} style={{ marginBottom: '8px' }}>
+              <p style={{ color: accent, fontFamily: 'Lato,sans-serif', fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase' }}>{item.label}</p>
+              <p className="font-cormorant" style={{ color: '#c8caff', fontSize: 'clamp(0.85rem,2vw,1.05rem)', whiteSpace: 'pre-line' }}>{item.value}</p>
             </div>
           ))}
-
-          <motion.p
-            style={{ color: accent, fontFamily: 'Lato,sans-serif', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '14px', opacity: 0.6 }}
-            animate={{ opacity: [0.3, 0.7, 0.3] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            ‹ Tap to go back
-          </motion.p>
         </div>
-      </motion.div>
+      </div>
+
+      {/* Scratch overlay canvas */}
+      {!scratched && (
+        <canvas
+          ref={canvasRef}
+          width={400}
+          height={400}
+          onMouseDown={() => { isDrawing.current = true }}
+          onMouseUp={() => { isDrawing.current = false }}
+          onMouseLeave={() => { isDrawing.current = false }}
+          onMouseMove={scratch}
+          onTouchStart={(e) => { isDrawing.current = true; scratch(e) }}
+          onTouchEnd={() => { isDrawing.current = false }}
+          onTouchMove={scratch}
+          style={{
+            position: 'absolute', inset: 0,
+            width: '100%', height: '100%',
+            borderRadius: '20px',
+            cursor: 'crosshair',
+            touchAction: 'none',
+          }}
+        />
+      )}
+
+      {scratched && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          style={{
+            position: 'absolute', bottom: '12px', left: 0, right: 0,
+            textAlign: 'center',
+            color: accent, fontFamily: 'Lato,sans-serif',
+            fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase',
+          }}
+        >
+          ✓ Revealed
+        </motion.div>
+      )}
     </motion.div>
   )
 }
@@ -157,12 +176,12 @@ export default function EventDetails() {
           </h2>
           <div className="gold-divider" />
           <p style={{ color: '#a890d8', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(10px,1.8vw,12px)', marginTop: '12px', letterSpacing: '0.08em' }}>
-            Tap each card to discover more
+            Scratch each card to reveal details
           </p>
         </motion.div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 'clamp(16px,3vw,40px)', alignItems: 'stretch' }}>
-          <FlipCard
+          <ScratchCard
             title="Haldi Ceremony"
             date="28 May 2026"
             time="4:00 PM – 9:00 PM"
@@ -173,7 +192,7 @@ export default function EventDetails() {
             delay={0.1}
             inView={inView}
           />
-          <FlipCard
+          <ScratchCard
             title="Muhurtham / Marriage"
             date="29 May 2026"
             time="8:30 AM – 9:30 AM"
@@ -185,17 +204,6 @@ export default function EventDetails() {
             inView={inView}
           />
         </div>
-
-        {/* ECG strip */}
-        <motion.div
-          style={{ marginTop: 'clamp(32px,5vw,56px)', display: 'flex', justifyContent: 'center' }}
-          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 1, delay: 0.4 }}
-        >
-          <svg viewBox="0 0 600 40" style={{ width: '100%', maxWidth: '560px', height: '40px' }}>
-            <path d="M0,20 L100,20 L118,20 L130,4 L142,36 L154,10 L166,20 L200,20 L300,20 L318,20 L330,4 L342,36 L354,10 L366,20 L400,20 L600,20"
-              stroke="#d4af37" strokeWidth="1.5" fill="none" opacity="0.4" strokeLinecap="round"/>
-          </svg>
-        </motion.div>
       </div>
     </section>
   )

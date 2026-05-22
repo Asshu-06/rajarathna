@@ -195,19 +195,34 @@ function Bride({ walking, reached }) {
   )
 }
 
-// Animated ECG line
-function ECGLine() {
+// Real estate divider — building silhouette instead of ECG wave
+function RealEstateDivider() {
   return (
-    <svg viewBox="0 0 400 60" style={{ width: 'clamp(200px,60vw,360px)', height: '40px' }} preserveAspectRatio="none">
-      <motion.path
-        d="M0,30 L60,30 L75,30 L85,5 L95,55 L105,15 L115,30 L130,30 L200,30 L215,30 L225,5 L235,55 L245,15 L255,30 L270,30 L400,30"
-        stroke="#d4af37"
-        strokeWidth="2"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 1.5, ease: 'easeInOut' }}
-      />
+    <svg viewBox="0 0 400 50" style={{ width: 'clamp(200px,60vw,360px)', height: '36px' }} preserveAspectRatio="none">
+      <motion.g
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={{ opacity: 1, scaleX: 1 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
+        style={{ transformOrigin: 'center' }}
+      >
+        {/* Left line */}
+        <line x1="0" y1="38" x2="120" y2="38" stroke="#d4af37" strokeWidth="1.5" opacity="0.6"/>
+        {/* Building silhouette */}
+        <rect x="130" y="20" width="18" height="18" fill="#d4af37" opacity="0.8"/>
+        <rect x="133" y="14" width="12" height="6" fill="#d4af37" opacity="0.8"/>
+        <rect x="137" y="10" width="4" height="4" fill="#d4af37" opacity="0.8"/>
+        {/* Key icon */}
+        <circle cx="200" cy="28" r="8" fill="none" stroke="#d4af37" strokeWidth="1.8" opacity="0.9"/>
+        <line x1="208" y1="28" x2="220" y2="28" stroke="#d4af37" strokeWidth="1.8" opacity="0.9"/>
+        <line x1="216" y1="28" x2="216" y2="33" stroke="#d4af37" strokeWidth="1.8" opacity="0.9"/>
+        <line x1="220" y1="28" x2="220" y2="33" stroke="#d4af37" strokeWidth="1.8" opacity="0.9"/>
+        {/* Building silhouette right */}
+        <rect x="252" y="20" width="18" height="18" fill="#d4af37" opacity="0.8"/>
+        <rect x="255" y="14" width="12" height="6" fill="#d4af37" opacity="0.8"/>
+        <rect x="259" y="10" width="4" height="4" fill="#d4af37" opacity="0.8"/>
+        {/* Right line */}
+        <line x1="280" y1="38" x2="400" y2="38" stroke="#d4af37" strokeWidth="1.5" opacity="0.6"/>
+      </motion.g>
     </svg>
   )
 }
@@ -340,7 +355,7 @@ export default function SplashScreen({ onComplete }) {
             </AnimatePresence>
           </div>
 
-          {/* ECG line */}
+          {/* Real estate divider */}
           <AnimatePresence>
             {(phase === 'meet' || phase === 'curtain' || phase === 'text') && (
               <motion.div
@@ -349,7 +364,7 @@ export default function SplashScreen({ onComplete }) {
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ duration: 0.6 }}
               >
-                <ECGLine />
+                <RealEstateDivider />
               </motion.div>
             )}
           </AnimatePresence>
