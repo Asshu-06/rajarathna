@@ -195,33 +195,70 @@ function Bride({ walking, reached }) {
   )
 }
 
-// Real estate divider — building silhouette instead of ECG wave
+// Temple Gopuram divider — South Indian temple tower
 function RealEstateDivider() {
   return (
-    <svg viewBox="0 0 400 50" style={{ width: 'clamp(200px,60vw,360px)', height: '36px' }} preserveAspectRatio="none">
+    <svg
+      viewBox="0 0 200 80"
+      style={{ width: 'clamp(200px,60vw,360px)', height: '56px' }}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <motion.g
-        initial={{ opacity: 0, scaleX: 0 }}
-        animate={{ opacity: 1, scaleX: 1 }}
+        initial={{ opacity: 0, scaleY: 0 }}
+        animate={{ opacity: 1, scaleY: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
-        style={{ transformOrigin: 'center' }}
+        style={{ transformOrigin: 'bottom center' }}
       >
         {/* Left line */}
-        <line x1="0" y1="38" x2="120" y2="38" stroke="#d4af37" strokeWidth="1.5" opacity="0.6"/>
-        {/* Building silhouette */}
-        <rect x="130" y="20" width="18" height="18" fill="#d4af37" opacity="0.8"/>
-        <rect x="133" y="14" width="12" height="6" fill="#d4af37" opacity="0.8"/>
-        <rect x="137" y="10" width="4" height="4" fill="#d4af37" opacity="0.8"/>
-        {/* Key icon */}
-        <circle cx="200" cy="28" r="8" fill="none" stroke="#d4af37" strokeWidth="1.8" opacity="0.9"/>
-        <line x1="208" y1="28" x2="220" y2="28" stroke="#d4af37" strokeWidth="1.8" opacity="0.9"/>
-        <line x1="216" y1="28" x2="216" y2="33" stroke="#d4af37" strokeWidth="1.8" opacity="0.9"/>
-        <line x1="220" y1="28" x2="220" y2="33" stroke="#d4af37" strokeWidth="1.8" opacity="0.9"/>
-        {/* Building silhouette right */}
-        <rect x="252" y="20" width="18" height="18" fill="#d4af37" opacity="0.8"/>
-        <rect x="255" y="14" width="12" height="6" fill="#d4af37" opacity="0.8"/>
-        <rect x="259" y="10" width="4" height="4" fill="#d4af37" opacity="0.8"/>
+        <line x1="0" y1="76" x2="60" y2="76" stroke="#d4af37" strokeWidth="1.2" opacity="0.5"/>
         {/* Right line */}
-        <line x1="280" y1="38" x2="400" y2="38" stroke="#d4af37" strokeWidth="1.5" opacity="0.6"/>
+        <line x1="140" y1="76" x2="200" y2="76" stroke="#d4af37" strokeWidth="1.2" opacity="0.5"/>
+
+        {/* Base platform */}
+        <rect x="72" y="70" width="56" height="6" rx="1" fill="#d4af37" opacity="0.9"/>
+        {/* Level 4 - widest */}
+        <rect x="74" y="60" width="52" height="10" rx="1" fill="#d4af37" opacity="0.85"/>
+        {/* Decorative notches level 4 */}
+        <rect x="76" y="58" width="6" height="4" rx="0.5" fill="#d4af37" opacity="0.7"/>
+        <rect x="86" y="58" width="6" height="4" rx="0.5" fill="#d4af37" opacity="0.7"/>
+        <rect x="96" y="58" width="8" height="4" rx="0.5" fill="#d4af37" opacity="0.7"/>
+        <rect x="108" y="58" width="6" height="4" rx="0.5" fill="#d4af37" opacity="0.7"/>
+        <rect x="118" y="58" width="6" height="4" rx="0.5" fill="#d4af37" opacity="0.7"/>
+        {/* Level 3 */}
+        <rect x="80" y="48" width="40" height="12" rx="1" fill="#d4af37" opacity="0.8"/>
+        {/* Decorative notches level 3 */}
+        <rect x="82" y="46" width="5" height="4" rx="0.5" fill="#d4af37" opacity="0.65"/>
+        <rect x="91" y="46" width="5" height="4" rx="0.5" fill="#d4af37" opacity="0.65"/>
+        <rect x="100" y="46" width="5" height="4" rx="0.5" fill="#d4af37" opacity="0.65"/>
+        <rect x="109" y="46" width="5" height="4" rx="0.5" fill="#d4af37" opacity="0.65"/>
+        <rect x="114" y="46" width="5" height="4" rx="0.5" fill="#d4af37" opacity="0.65"/>
+        {/* Level 2 */}
+        <rect x="86" y="36" width="28" height="12" rx="1" fill="#d4af37" opacity="0.75"/>
+        {/* Decorative notches level 2 */}
+        <rect x="88" y="34" width="4" height="4" rx="0.5" fill="#d4af37" opacity="0.6"/>
+        <rect x="96" y="34" width="8" height="4" rx="0.5" fill="#d4af37" opacity="0.6"/>
+        <rect x="108" y="34" width="4" height="4" rx="0.5" fill="#d4af37" opacity="0.6"/>
+        {/* Level 1 */}
+        <rect x="90" y="26" width="20" height="10" rx="1" fill="#d4af37" opacity="0.7"/>
+        {/* Notches level 1 */}
+        <rect x="92" y="24" width="4" height="4" rx="0.5" fill="#d4af37" opacity="0.55"/>
+        <rect x="100" y="24" width="4" height="4" rx="0.5" fill="#d4af37" opacity="0.55"/>
+        <rect x="104" y="24" width="4" height="4" rx="0.5" fill="#d4af37" opacity="0.55"/>
+        {/* Spire */}
+        <rect x="96" y="16" width="8" height="10" rx="1" fill="#d4af37" opacity="0.8"/>
+        <rect x="98" y="10" width="4" height="8" rx="1" fill="#d4af37" opacity="0.85"/>
+        {/* Kalash (pot on top) */}
+        <ellipse cx="100" cy="9" rx="4" ry="3" fill="#d4af37" opacity="0.95"/>
+        <ellipse cx="100" cy="7" rx="2.5" ry="2" fill="#d4af37" opacity="0.95"/>
+        <circle cx="100" cy="5" r="1.5" fill="#d4af37" opacity="1"/>
+        {/* Decorative side towers */}
+        <rect x="64" y="62" width="10" height="14" rx="1" fill="#d4af37" opacity="0.5"/>
+        <rect x="65" y="58" width="8" height="6" rx="0.5" fill="#d4af37" opacity="0.45"/>
+        <rect x="66" y="55" width="6" height="5" rx="0.5" fill="#d4af37" opacity="0.4"/>
+        <rect x="126" y="62" width="10" height="14" rx="1" fill="#d4af37" opacity="0.5"/>
+        <rect x="127" y="58" width="8" height="6" rx="0.5" fill="#d4af37" opacity="0.45"/>
+        <rect x="128" y="55" width="6" height="5" rx="0.5" fill="#d4af37" opacity="0.4"/>
       </motion.g>
     </svg>
   )
