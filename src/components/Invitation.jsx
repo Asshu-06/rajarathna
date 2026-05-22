@@ -18,7 +18,7 @@ export default function Invitation() {
         position: 'relative',
         width: '100%',
         padding: 'clamp(64px,10vw,120px) 0',
-        background: 'linear-gradient(180deg,#0d0f2b 0%,#141640 100%)',
+        background: 'linear-gradient(180deg,#1a0510 0%,#2d0a1e 100%)',
       }}
     >
       <div className="section-line" />
@@ -36,10 +36,10 @@ export default function Invitation() {
             </svg>
             <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg,#d4af37,transparent)' }} />
           </div>
-          <p style={{ color: '#9b9fe8', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '12px' }}>
+          <p style={{ color: '#e8a0b0', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '12px' }}>
             Invitation
           </p>
-          <h2 className="font-playfair" style={{ color: '#e8e9ff', fontSize: 'clamp(1.8rem,5vw,3rem)' }}>
+          <h2 className="font-playfair" style={{ color: '#f5e6d0', fontSize: 'clamp(1.8rem,5vw,3rem)' }}>
             Join Us in Celebration
           </h2>
         </motion.div>
@@ -49,45 +49,45 @@ export default function Invitation() {
           style={{
             borderRadius: '20px',
             padding: 'clamp(24px,5vw,56px) clamp(20px,5vw,56px)',
-            background: 'rgba(255,255,255,0.06)',
-            border: '1px solid rgba(155,159,232,0.3)',
+            background: 'rgba(139,26,47,0.12)',
+            border: '1px solid rgba(212,175,55,0.3)',
             boxShadow: '0 16px 60px rgba(0,0,0,0.4)',
             backdropFilter: 'blur(16px)',
           }}
         >
-          <p className="font-cormorant" style={{ color: '#c8caff', fontSize: 'clamp(1rem,2.5vw,1.4rem)', fontStyle: 'italic', textAlign: 'center', lineHeight: 1.7, marginBottom: '20px' }}>
+          <p className="font-cormorant" style={{ color: '#e8c8d0', fontSize: 'clamp(1rem,2.5vw,1.4rem)', fontStyle: 'italic', textAlign: 'center', lineHeight: 1.7, marginBottom: '20px' }}>
             Mr. &amp; Mrs. Family cordially invite you to celebrate the auspicious wedding ceremony of
           </p>
-          <p className="font-cormorant" style={{ color: '#a8aaee', fontSize: 'clamp(0.95rem,2vw,1.25rem)', textAlign: 'center', lineHeight: 1.7, marginBottom: '24px' }}>
+          <p className="font-cormorant" style={{ color: '#d4a0b0', fontSize: 'clamp(0.95rem,2vw,1.25rem)', textAlign: 'center', lineHeight: 1.7, marginBottom: '24px' }}>
             With the blessings of family and friends, we request your gracious presence to make this occasion more memorable.
           </p>
 
           <motion.div
-            style={{ textAlign: 'center', padding: 'clamp(16px,3vw,28px) 0', borderTop: '1px solid rgba(155,159,232,0.25)', borderBottom: '1px solid rgba(155,159,232,0.25)', marginBottom: '28px' }}
+            style={{ textAlign: 'center', padding: 'clamp(16px,3vw,28px) 0', borderTop: '1px solid rgba(212,175,55,0.25)', borderBottom: '1px solid rgba(212,175,55,0.25)', marginBottom: '28px' }}
             {...fadeUp(0.28)}
           >
-            <p className="font-playfair" style={{ color: '#e8e9ff', fontSize: 'clamp(1.4rem,4vw,2.5rem)' }}>✨ A. Selvaraja</p>
+            <p className="font-playfair" style={{ color: '#f5e6d0', fontSize: 'clamp(1.4rem,4vw,2.5rem)' }}>✨ A. Selvaraja</p>
             <p className="font-playfair" style={{ color: '#d4af37', fontSize: 'clamp(1.6rem,4vw,2.5rem)', margin: '12px 0' }}>with</p>
-            <p className="font-playfair" style={{ color: '#e8e9ff', fontSize: 'clamp(1.4rem,4vw,2.5rem)' }}>✨ R. Rathna</p>
+            <p className="font-playfair" style={{ color: '#f5e6d0', fontSize: 'clamp(1.4rem,4vw,2.5rem)' }}>✨ R. Rathna</p>
           </motion.div>
 
           <motion.div {...fadeUp(0.38)} style={{ marginBottom: '16px' }}>
-            <p className="font-cormorant" style={{ color: '#9b9fe8', fontSize: 'clamp(1rem,2.5vw,1.3rem)', textAlign: 'center', marginBottom: '8px' }}>
+            <p className="font-cormorant" style={{ color: '#e8a0b0', fontSize: 'clamp(1rem,2.5vw,1.3rem)', textAlign: 'center', marginBottom: '8px' }}>
               🌼 Haldi Ceremony
             </p>
-            <p className="font-cormorant" style={{ color: '#c8caff', fontSize: 'clamp(0.95rem,2vw,1.2rem)', textAlign: 'center', lineHeight: 1.7 }}>
+            <p className="font-cormorant" style={{ color: '#e8c8d0', fontSize: 'clamp(0.95rem,2vw,1.2rem)', textAlign: 'center', lineHeight: 1.7 }}>
               📅 28th May 2026 &nbsp;🕓 4:00 PM – 9:00 PM
             </p>
           </motion.div>
 
           <motion.div {...fadeUp(0.44)} style={{ marginBottom: '20px' }}>
-            <p className="font-cormorant" style={{ color: '#9b9fe8', fontSize: 'clamp(1rem,2.5vw,1.3rem)', textAlign: 'center', marginBottom: '8px' }}>
+            <p className="font-cormorant" style={{ color: '#e8a0b0', fontSize: 'clamp(1rem,2.5vw,1.3rem)', textAlign: 'center', marginBottom: '8px' }}>
               💍 Muhurtham / Marriage
             </p>
-            <p className="font-cormorant" style={{ color: '#c8caff', fontSize: 'clamp(0.95rem,2vw,1.2rem)', textAlign: 'center', lineHeight: 1.7 }}>
+            <p className="font-cormorant" style={{ color: '#e8c8d0', fontSize: 'clamp(0.95rem,2vw,1.2rem)', textAlign: 'center', lineHeight: 1.7 }}>
               📅 29th May 2026 &nbsp;🕣 8:30 AM – 9:30 AM
             </p>
-            <p className="font-cormorant" style={{ color: '#c8caff', fontSize: 'clamp(0.95rem,2vw,1.2rem)', textAlign: 'center', lineHeight: 1.7 }}>
+            <p className="font-cormorant" style={{ color: '#e8c8d0', fontSize: 'clamp(0.95rem,2vw,1.2rem)', textAlign: 'center', lineHeight: 1.7 }}>
               📍 Bellezza Event Hall, Coimbatore
             </p>
           </motion.div>

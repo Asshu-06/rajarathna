@@ -121,7 +121,7 @@ export default function LoveLetter() {
         position: 'relative',
         width: '100%',
         padding: 'clamp(64px,10vw,120px) 0',
-        background: 'linear-gradient(160deg,#1a0a0f 0%,#2d0f1a 50%,#1f0a12 100%)',
+        background: 'linear-gradient(160deg,#1a0510 0%,#2d0a1e 50%,#1a0510 100%)',
       }}
     >
       <div className="section-line" />

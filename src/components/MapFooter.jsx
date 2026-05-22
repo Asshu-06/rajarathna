@@ -15,7 +15,7 @@ export default function MapFooter() {
     <footer
       ref={ref}
       className={`section-highlight${inView ? ' in-view' : ''}${inView ? ' section-glow' : ''}`}
-      style={{ position: 'relative', width: '100%', background: 'linear-gradient(180deg,#0d0f1a 0%,#1a1030 100%)' }}
+      style={{ position: 'relative', width: '100%', background: 'linear-gradient(180deg,#120008 0%,#2d0a1e 100%)' }}
     >
       <div className="section-line" />
 
@@ -26,13 +26,13 @@ export default function MapFooter() {
       <div style={{ width: '100%', maxWidth: '960px', margin: '0 auto', padding: 'clamp(48px,8vw,80px) clamp(16px,5vw,40px)' }}>
 
         <motion.div style={{ textAlign: 'center', marginBottom: 'clamp(28px,4vw,48px)' }} {...fadeUp(0)}>
-          <p style={{ color: '#9b9fe8', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '12px' }}>
+          <p style={{ color: '#e8a0b0', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '12px' }}>
             Find Us
           </p>
-          <h2 className="font-playfair" style={{ color: '#e8e9ff', fontSize: 'clamp(1.8rem,5vw,3rem)', marginBottom: '8px' }}>
+          <h2 className="font-playfair" style={{ color: '#f5e6d0', fontSize: 'clamp(1.8rem,5vw,3rem)', marginBottom: '8px' }}>
             Venue Location
           </h2>
-          <p className="font-cormorant" style={{ color: '#a8aaee', fontSize: 'clamp(1rem,2.5vw,1.3rem)', fontStyle: 'italic', marginBottom: '16px' }}>
+          <p className="font-cormorant" style={{ color: '#d4a0b0', fontSize: 'clamp(1rem,2.5vw,1.3rem)', fontStyle: 'italic', marginBottom: '16px' }}>
             Bellezza Event Hall, Coimbatore
           </p>
           <div className="gold-divider" />
@@ -94,13 +94,13 @@ export default function MapFooter() {
             </svg>
             <div style={{ width: '60px', height: '1px', background: 'linear-gradient(90deg,#d4af37,transparent)' }} />
           </div>
-          <p className="font-playfair" style={{ color: '#e8e9ff', fontSize: 'clamp(1.1rem,3vw,1.8rem)', fontStyle: 'italic', marginBottom: '10px' }}>
+          <p className="font-playfair" style={{ color: '#f5e6d0', fontSize: 'clamp(1.1rem,3vw,1.8rem)', fontStyle: 'italic', marginBottom: '10px' }}>
             "Built on love, blessed by tradition"
           </p>
-          <p className="font-cormorant" style={{ color: '#a8aaee', fontSize: 'clamp(0.95rem,2vw,1.2rem)' }}>
+          <p className="font-cormorant" style={{ color: '#d4a0b0', fontSize: 'clamp(0.95rem,2vw,1.2rem)' }}>
             A. Selvaraja &amp; R. Rathna
           </p>
-          <p style={{ color: '#7070b8', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.3em', textTransform: 'uppercase', marginTop: '16px' }}>
+          <p style={{ color: '#a06070', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.3em', textTransform: 'uppercase', marginTop: '16px' }}>
             29 May 2026 · Bellezza Event Hall, Coimbatore
           </p>
         </motion.div>

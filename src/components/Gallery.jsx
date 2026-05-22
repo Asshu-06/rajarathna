@@ -17,7 +17,7 @@ export default function Gallery() {
     <section
       ref={ref}
       className={`section-highlight${inView ? ' in-view' : ''}${inView ? ' section-glow' : ''}`}
-      style={{ position: 'relative', width: '100%', padding: 'clamp(48px,8vw,96px) 0', background: 'linear-gradient(180deg,#0a1a0f 0%,#0f2d1a 100%)' }}
+      style={{ position: 'relative', width: '100%', padding: 'clamp(48px,8vw,96px) 0', background: 'linear-gradient(180deg,#1a0510 0%,#2d0a1e 100%)' }}
     >
       <div className="section-line" />
 
@@ -30,10 +30,10 @@ export default function Gallery() {
           style={{ textAlign: 'center', marginBottom: 'clamp(32px,5vw,56px)' }}
           initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}
         >
-          <p style={{ color: '#7ecfb0', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '12px' }}>
+          <p style={{ color: '#e8a0b0', fontFamily: 'Lato,sans-serif', fontSize: 'clamp(9px,1.5vw,11px)', letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '12px' }}>
             Moments
           </p>
-          <h2 className="font-playfair" style={{ color: '#e8f5f0', fontSize: 'clamp(1.8rem,5vw,3rem)', marginBottom: '16px' }}>
+          <h2 className="font-playfair" style={{ color: '#f5e6d0', fontSize: 'clamp(1.8rem,5vw,3rem)', marginBottom: '16px' }}>
             Gallery
           </h2>
           <div className="gold-divider" />

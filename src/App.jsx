@@ -71,7 +71,7 @@ function MainApp() {
   }, [])
 
   return (
-    <div style={{ width: '100%', minHeight: '100vh', background: '#0d0f1a', position: 'relative', overflowX: 'hidden' }}>
+    <div style={{ width: '100%', minHeight: '100vh', background: '#120008', position: 'relative', overflowX: 'hidden' }}>
       <Particles />
 
       {/* ── GATE: Open Invitation screen ── */}
@@ -83,7 +83,7 @@ function MainApp() {
               position: 'fixed', inset: 0, zIndex: 60,
               display: 'flex', flexDirection: 'column',
               alignItems: 'center', justifyContent: 'center',
-              background: 'radial-gradient(ellipse at center, #1a0a2e 0%, #2d1060 55%, #1a0a2e 100%)',
+              background: 'radial-gradient(ellipse at center, #1a0510 0%, #3d0a1e 55%, #1a0510 100%)',
             }}
             exit={{ opacity: 0, scale: 1.03 }}
             transition={{ duration: 0.6 }}
@@ -104,7 +104,7 @@ function MainApp() {
             </motion.div>
 
             <motion.p
-              style={{ color: '#b8a0e8', fontFamily: 'Lato,sans-serif', fontSize: '11px', letterSpacing: '0.5em', textTransform: 'uppercase', marginBottom: '12px' }}
+              style={{ color: '#e8a0b0', fontFamily: 'Lato,sans-serif', fontSize: '11px', letterSpacing: '0.5em', textTransform: 'uppercase', marginBottom: '12px' }}
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
             >
               You are invited
@@ -112,7 +112,7 @@ function MainApp() {
 
             <motion.h1
               className="font-playfair"
-              style={{ color: '#f0e8ff', fontSize: 'clamp(1.6rem,5vw,2.6rem)', textAlign: 'center', lineHeight: 1.3, marginBottom: '6px' }}
+              style={{ color: '#f5e6d0', fontSize: 'clamp(1.6rem,5vw,2.6rem)', textAlign: 'center', lineHeight: 1.3, marginBottom: '6px' }}
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.65 }}
             >
               A. Selvaraja
@@ -126,14 +126,14 @@ function MainApp() {
             </motion.p>
             <motion.h1
               className="font-playfair"
-              style={{ color: '#f0e8ff', fontSize: 'clamp(1.6rem,5vw,2.6rem)', textAlign: 'center', lineHeight: 1.3, marginBottom: '8px' }}
+              style={{ color: '#f5e6d0', fontSize: 'clamp(1.6rem,5vw,2.6rem)', textAlign: 'center', lineHeight: 1.3, marginBottom: '8px' }}
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
             >
               R. Rathna
             </motion.h1>
             <motion.p
               className="font-cormorant"
-              style={{ color: '#b8a0e8', fontSize: 'clamp(0.9rem,2.5vw,1.1rem)', fontStyle: 'italic', marginBottom: '40px' }}
+              style={{ color: '#e8a0b0', fontSize: 'clamp(0.9rem,2.5vw,1.1rem)', fontStyle: 'italic', marginBottom: '40px' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.05 }}
             >
               29 May 2026 · Bellezza Event Hall, Coimbatore
