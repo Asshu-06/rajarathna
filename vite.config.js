@@ -8,22 +8,9 @@ export default defineConfig({
     allowedHosts: 'all',
   },
   build: {
-    // Increase chunk size warning limit
     chunkSizeWarningLimit: 1000,
-    rollupOptions: {
-      output: {
-        // Split vendor chunks for better caching
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          motion: ['framer-motion'],
-          router: ['react-router-dom'],
-        },
-      },
-    },
-    // Enable asset compression
     assetsInlineLimit: 4096,
   },
-  // Optimize deps
   optimizeDeps: {
     include: ['react', 'react-dom', 'framer-motion'],
   },
